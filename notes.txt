@@ -1,2 +1,20 @@
-notes.txt
+EstalviMés
+==========
+Programa per a les finances personals.
+
+Tecnologies aplicades
+---------------------
+html, css, javascript, php, MySQL
+Frameworks: jQuery, Bootstrap????
+
+Menú principal
+--------------
+Afegir Despesa -> puntual o periòdica
+Afegir Ingrés  -> puntual o periòdica
+
+Finestra superior
+-----------------
+- Data i hora
+- Notificacions
+- Saldo total
 
