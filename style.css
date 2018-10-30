@@ -2,4 +2,26 @@
     Created on : 28/10/2018, 10:33:22
     Author     : laura
 */
+body {
+    background-color: #F8E0F7;
+}
+#logo_sup{
+    height:80px;
+    width: 80px;
+    float: left;
+}
+#notifications, aside, .contenido{
+    border: 2px solid pink;
+    border-radius: 15px;
+    margin: 2px;
+    background-color: white;
+    font-family: 'Mali', cursive;
+    font-size: 15px;
+}
+#notifications{
+    font-size: 20px;
+}
+#notification_reminder{
+    color: gray;
+}
 
