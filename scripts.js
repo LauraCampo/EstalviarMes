@@ -1,7 +1,8 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
+//alert("prueba spcripts.js");
+$(document).ready(function(){    
+//******** INGRES ***********
+//REALITZAR L'APUNT D'UNA DESPESA:               
+                $('#despesa').click(function(){
+                    $(".contingut").load('despesa.html');
+                });
+});            

@@ -10,7 +10,7 @@ body {
     width: 80px;
     float: left;
 }
-#notifications, aside, .contenido{
+#notifications, aside, .contingut{
     border: 2px solid pink;
     border-radius: 15px;
     margin: 2px;

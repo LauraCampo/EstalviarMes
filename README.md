@@ -1,7 +1,8 @@
 # Estalvi i Més
 
+Aplicatiu per controlar les finances personals.
 
-App to manage personal finances
+Amb aquest aplicatiu es poden controlar les despeses i els ingressos del nostre dia a dia.
 
  1.- Data Base Design:
   

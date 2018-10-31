@@ -7,14 +7,24 @@ Tecnologies aplicades
 html, css, javascript, php, MySQL
 Frameworks: jQuery, Bootstrap????
 
-Menú principal
---------------
-Afegir Despesa -> puntual o periòdica
-Afegir Ingrés  -> puntual o periòdica
-
-Finestra superior
------------------
+*******************************************************************************
+Finestra de notificacions
+-------------------------
+- Logo
 - Data i hora
 - Notificacions
 - Saldo total
+
+Menú principal
+--------------
+
+Afegir moviment 
+    - Data
+    - Import 
+        - despesa -> negatiu
+        - ingrés  -> positiu
+    - Concepte
+    - Tipus
+
+
 
