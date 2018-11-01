@@ -25,31 +25,33 @@
                     var f=new Date();
                     document.write(diesSetmana[f.getDay()] + ", " + f.getDate() + " " + mesos[f.getMonth()] + " de " + f.getFullYear());
                 </script>
+                <a href="configuracio.html">
+                    <img id="config_icon" src="images/config_logo.png" alt="logo">
+                </a>
                 </div>
             <div id="notification_reminder">
                 <p>No tens missatges per avui</p>
             </div>
         </div>
         </header>
-        <aside> <!-- menú principal, a capa lateral --> 
+        <aside> <!-- menú principal, a capa lateral -->
+            <!--TODO:
+                - eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
+                - l'enllaç a configuració que sigui només una icona (a un costat)
+            -->
 			<nav>
 			<!-- menú lateral (principal) -->
 			    <ul id="lista_menu">
-                                <li id="submenu1">Afegir moviments
-                                    <div id="despesa"><a href="#">Despesa</a></div><!--despesa.html-->
-                                    <div id="ingres"><a href="#">Ingrés</a></div><!--.php--> 
+                                <li id="submenu1">
+                                    <div id="moviment"><a href="#">Afegir moviment</a></div><!--moviment.html-->
                                 </li>
-			        <li id="submenu2">Consulta
+			        <li id="submenu2">Consultes
                                     <div id="ultimsmoviments"><a href="#">Moviments últims 15 dies</a></div><!--.php-->
-                                    <div id="moviments"><a href="#">Moviments</a></div><!--.php-->
+                                    <div id="moviments_totals"><a href="#">Moviments totals</a></div><!--.php-->
                                 </li>
-                                <li id="submenu3">
-                                    <a href="#">Gestión Caja</a>
-                                </li> 
 			    </ul>
 			</nav>
         </aside>
-            
             <div class="contingut">
                 <p>Per començar escull una opció del menú lateral.</p>
             </div>

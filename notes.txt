@@ -19,12 +19,14 @@ Menú principal
 --------------
 
 Afegir moviment 
-    - Data
+    - Data -> que per defecte aparegui la data d'avui
+                - que es pugui despolegar calendari
     - Import 
         - despesa -> negatiu
         - ingrés  -> positiu
-    - Concepte
-    - Tipus
+    - Concepte (descripció)
+    - Tipus -> desplegable amb opcions BD tipus
+    - Via (targeta-nom de la targeta, efectiu, transferència)
 
 
 

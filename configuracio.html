@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Estalviar i Més</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="scripts.js"></script>
+    </head>
+    <body><div id="form_configuració">
+                <form action="configuracio2.php" method="post">
+                    <!-- TODO:
+                        - CATEGORIA:
+                                -crear categories
+                                -consultar categories
+                        - MÈTODE de PAGAMENT:
+                                -crear mètode
+                                -consultar mètodes
+                    -->
+                    Categoria:<input type="text" size="8" name="Categoria"><br>
+                    Metode:<input type="text" size="30" name="Import"><br>
+                    <input type="reset" class="boton" value="Esborrar dades">
+                    <input type="submit" class="boton" value="Realitzar moviment" name="alta">
+                </form>
+            </div>
+    </body>
+</html>
