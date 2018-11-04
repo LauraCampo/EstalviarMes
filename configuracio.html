@@ -9,7 +9,7 @@
         <script src="jquery-3.3.1.js"></script>
         <script type="text/javascript" src="scripts.js"></script>
     </head>
-    <body><div id="form_configuració">
+    <body><div id="form_configuració" class="caixa_formulari">
                 <form action="configuracio2.php" method="post">
                     <!-- TODO:
                         - CATEGORIA:
@@ -20,7 +20,13 @@
                                 -consultar mètodes
                     -->
                     Categoria:<input type="text" size="8" name="Categoria"><br>
+                        <div class="contingut">
+                            <!-- aqui apareixerà el formulari de categories -->
+                        </div>
                     Metode:<input type="text" size="30" name="Import"><br>
+                        <div class="contingut">
+                            <!-- aqui apareixerà el formulari de contiguts -->
+                        </div>
                     <input type="reset" class="boton" value="Esborrar dades">
                     <input type="submit" class="boton" value="Realitzar moviment" name="alta">
                 </form>

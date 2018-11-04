@@ -16,7 +16,7 @@ body {
     float: right;
     padding: 10px;
 }
-#notifications, aside, .contingut{
+#notifications, .caixa_formulari, .contingut {
     border: 2px solid pink;
     border-radius: 15px;
     margin: 2px;

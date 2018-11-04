@@ -34,7 +34,7 @@
             </div>
         </div>
         </header>
-        <aside> <!-- menú principal, a capa lateral -->
+        <aside class="caixa_formulari"> <!-- menú principal, a capa lateral -->
             <!--TODO:
                 - eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
                 - l'enllaç a configuració que sigui només una icona (a un costat)
