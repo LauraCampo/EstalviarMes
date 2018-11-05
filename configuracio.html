@@ -9,27 +9,26 @@
         <script src="jquery-3.3.1.js"></script>
         <script type="text/javascript" src="scripts.js"></script>
     </head>
-    <body><div id="form_configuració" class="caixa_formulari">
-                <form action="configuracio2.php" method="post">
-                    <!-- TODO:
-                        - CATEGORIA:
-                                -crear categories
-                                -consultar categories
-                        - MÈTODE de PAGAMENT:
-                                -crear mètode
-                                -consultar mètodes
-                    -->
-                    Categoria:<input type="text" size="8" name="Categoria"><br>
-                        <div class="contingut">
-                            <!-- aqui apareixerà el formulari de categories -->
-                        </div>
-                    Metode:<input type="text" size="30" name="Import"><br>
-                        <div class="contingut">
-                            <!-- aqui apareixerà el formulari de contiguts -->
-                        </div>
-                    <input type="reset" class="boton" value="Esborrar dades">
-                    <input type="submit" class="boton" value="Realitzar moviment" name="alta">
-                </form>
+    <body>
+        <div class="caixa_formulari"> <!-- menú configuració, a capa lateral -->
+            <!--TODO:
+                - eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
+                - l'enllaç a configuració que sigui només una icona (a un costat)
+            -->
+			<nav>
+			<!-- menú lateral (principal) -->
+			    <ul id="lista_menu">
+                                <li id="submenu1">
+                                    <div id="categoria"><a href="#">Afegir categoria</a></div><!--.html-->
+                                </li>
+			        <li id="submenu2">Consultes
+                                    <div id="metode"><a href="#">Afegir mètode de pagament</a></div><!--.php-->
+                                </li>
+			    </ul>
+			</nav>
+        </div>
+            <div class="contingut">
+                <p>Per començar escull una opció del menú.</p>
             </div>
     </body>
 </html>

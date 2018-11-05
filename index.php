@@ -34,7 +34,7 @@
             </div>
         </div>
         </header>
-        <aside class="caixa_formulari"> <!-- menú principal, a capa lateral -->
+        <div class="caixa_formulari"> <!-- menú principal, a capa lateral -->
             <!--TODO:
                 - eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
                 - l'enllaç a configuració que sigui només una icona (a un costat)
@@ -51,9 +51,9 @@
                                 </li>
 			    </ul>
 			</nav>
-        </aside>
+        </div>
             <div class="contingut">
-                <p>Per començar escull una opció del menú lateral.</p>
+                <p>Per començar escull una opció del menú.</p>
             </div>
     </body>
 </html>
