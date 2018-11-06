@@ -13,7 +13,7 @@
     <body>
         <h3>Llistat de categories creades:</h3>   
 <?php
-$conexion= mysqli_connect("127.0.0.1","root","++++","EstalviarMes");
+$conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
 $sel="SELECT * FROM Categories";
 $exec= mysqli_query($conexion, $sel);
 //if (!$check1_res) {
