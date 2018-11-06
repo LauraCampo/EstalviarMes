@@ -25,7 +25,7 @@
                     var f=new Date();
                     document.write(diesSetmana[f.getDay()] + ", " + f.getDate() + " " + mesos[f.getMonth()] + " de " + f.getFullYear());
                 </script>
-                <a href="configuracio.html">
+                <a href="configuracio.php">
                     <img id="config_icon" src="images/config_logo.png" alt="logo">
                 </a>
                 </div>
