@@ -11,4 +11,8 @@ $(document).ready(function(){
         
     });
 //MÈTODE
+    $('#metode').click(function(){
+        $(".contingut").load('metode.php');
+        
+    });
 });            

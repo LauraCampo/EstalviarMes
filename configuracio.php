@@ -20,7 +20,7 @@
 			<!-- menú lateral (principal) -->
 			    <ul id="lista_menu">
 			        <li id="submenu1">
-                                    <div id="metode"><a href="#">Mètodes de pagament</a></div><!--.php-->
+                                    <div id="metode"><a href="#">Mètodes de pagament</a></div><!--metode.php-->
                                 </li>
                                 <li id="submenu2">
                                     <div id="categoria"><a href="#">Categories</a></div><!--categoria.php-->
