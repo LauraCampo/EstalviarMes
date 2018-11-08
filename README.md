@@ -7,7 +7,7 @@ Amb aquest aplicatiu es poden controlar les despeses i els ingressos del nostre 
  1.- Data Base Design:
   
  
- ![Screenshot](BD.png)
+ ![Screenshot](images/BD.png)
  
  2.- Captura de la pàgina principal:
  
