@@ -12,9 +12,10 @@
     </head>
     <body>
         <div class="caixa_formulari"> <!-- menú configuració, a capa lateral -->
-            <!--TODO:
+            <!--
+            #TODO:
                 - eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
-                - l'enllaç a configuració que sigui només una icona (a un costat)
+                
             -->
 			<nav>
 			<!-- menú lateral (principal) -->

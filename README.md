@@ -1,4 +1,4 @@
-# Estalvi i Més
+# Estalviar Més
 
 Aplicatiu per controlar les finances personals.
 
