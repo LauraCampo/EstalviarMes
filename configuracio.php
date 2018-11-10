@@ -15,7 +15,6 @@
             <!--
             #TODO:
                 - eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
-                
             -->
 			<nav>
 			<!-- menú lateral (principal) -->
