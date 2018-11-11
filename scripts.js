@@ -17,7 +17,7 @@ $(document).ready(function(){
     });
     //CLICK ON form's submit:
     //SHOW .php in .content:
-    $('#form_altas_inq form').submit(function(event) {
+    $('#metode_list form').submit(function(event) {
       console.log('Alta inquilinos');
       event.preventDefault();
       var formValues = $(this).serialize();
