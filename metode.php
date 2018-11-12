@@ -15,18 +15,17 @@
 <?php
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     if(isset($_POST["Nom"])){ //en cas de què s'hagi enviat el formulari
-          echo("enviat");
-          //INSERT INTO `EstalviarMes`.`Metodes` (`Referencia`, `Nom`) VALUES ('1', 'Efectiu');
           //aquí afegir dades a la taula Mètode
-                        $insert="INSERT INTO Metodes VALUES (";
-                $insert.="'"."1"."'".",";
-                $insert.="'".$_POST["Nom"]."'".",";
-                $insert.=")";        
+                $insert="INSERT INTO Metodes VALUES (";
+                $insert.="'".$_POST["Numero_metode"]."'".",";
+                $insert.="'".$_POST["Nom"]."'";
+                $insert.=")";
+                //echo $insert;
                 $exec= mysqli_query($conexion, $insert);
-        if (!$check1_res) {
-            printf("Error: %s\n", mysqli_error($conexion));
-            exit();
-        }
+//        if (!$check1_res) {
+//            printf("Error: %s\n", mysqli_error($conexion));
+//            exit();
+//        }
           goto a;
     }
     else{ //(else -> en cas de què NO s'hagi enviat)
@@ -51,18 +50,19 @@
                 <tbody>        
 <?php
 while($registre= mysqli_fetch_array($exec)){
+    $cont = $registre[0];
+    $cont=$cont+1;
 ?>
                     <tr>
                         <td><?php echo($registre[0]);?></td><!--Referencia-->
                         <td><?php echo($registre[1]);?></td><!--Nom-->
-                        <td><!-- esborrar registre -->
-                        
+                        <td><!-- esborrar registre -->    
                         </td>
                     </tr>
 <?php } ?>
                     <tr>
                         <td><!-- apareix número automàtic -->
-                            <?php echo($registre[0]+1);?> 
+                            <input class="boton" type="text" size="2" name="Numero_metode" readonly value="<?php echo($cont);?>">
                         </td>
                         <td><!-- s'introdueix nou mètode -->
                             Nom:<input type="text" size="20" name="Nom">
@@ -81,6 +81,3 @@ while($registre= mysqli_fetch_array($exec)){
 </div>
     </body>
 </html>
-
-
-
