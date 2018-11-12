@@ -16,26 +16,30 @@
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     if(isset($_POST["Nom"])){ //en cas de què s'hagi enviat el formulari
           echo("enviat");
+          //INSERT INTO `EstalviarMes`.`Metodes` (`Referencia`, `Nom`) VALUES ('1', 'Efectiu');
           //aquí afegir dades a la taula Mètode
                         $insert="INSERT INTO Metodes VALUES (";
-            #TODO: the first field is not available to insert (autoincrement number)
-            #      consult how to insert alternate values into table
+                $insert.="'"."1"."'".",";
                 $insert.="'".$_POST["Nom"]."'".",";
                 $insert.=")";        
                 $exec= mysqli_query($conexion, $insert);
+        if (!$check1_res) {
+            printf("Error: %s\n", mysqli_error($conexion));
+            exit();
+        }
           goto a;
     }
     else{ //(else -> en cas de què NO s'hagi enviat)
         a:
         $sel="SELECT * FROM Metodes";
         $exec= mysqli_query($conexion, $sel);
-        //if (!$check1_res) {
-        //    printf("Error: %s\n", mysqli_error($conexion));
-        //    exit();
-        //}
+//        if (!$check1_res) {
+//            printf("Error: %s\n", mysqli_error($conexion));
+//            exit();
+//        }
 ?>
         <div id="metode_list">
-            <form action="metode.php" method="post">
+            <form action="metode.php" method="post" >
                 <table>
                     <thead>
                     <tr>

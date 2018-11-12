@@ -18,7 +18,7 @@ $(document).ready(function(){
     //CLICK ON form's submit:
     //SHOW .php in .content:
     $('#metode_list form').submit(function(event) {
-      console.log('Alta inquilinos');
+      console.log('Afegir metode');
       event.preventDefault();
       var formValues = $(this).serialize();
       $.post('metode.php', formValues ,function(data){
