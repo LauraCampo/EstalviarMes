@@ -1,4 +1,10 @@
 $(document).ready(function(){    
+//********MENÚ PRINCIPAL********
+//CLICAR A ICONA CONFIGURACIÓ
+    $('#config_icon').click(function(){
+        $(".contingut").load('configuracio.php');
+        alert("configuracio");
+    });
 //******** INGRES ***********
 //REALITZAR L'APUNT D'UNA DESPESA:               
     $('#moviment').click(function(){
