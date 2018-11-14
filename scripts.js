@@ -2,23 +2,22 @@ $(document).ready(function(){
 //********MENÚ PRINCIPAL********
 //CLICAR A ICONA CONFIGURACIÓ
     $('#config_icon').click(function(){
-        $(".contingut").load('configuracio.php');
-        alert("configuracio");
+        $("#contingut1").load('configuracio.php');
     });
 //******** INGRES ***********
 //REALITZAR L'APUNT D'UNA DESPESA:               
     $('#moviment').click(function(){
-        $(".contingut").load('moviment.html');
+        $("#contingut1").load('moviment.html');
     });
 //******** MENÚ CONFIGURACIÓ ***********
 //CATEGORIA
     $('#categoria').click(function(){
-        $(".contingut").load('categoria.php');
+        $("#contingut2").load('categoria.php');
         
     });
 //MÈTODE
     $('#metode').click(function(){
-        $(".contingut").load('metode.php');
+        $("#contingut2").load('metode.php');
         
     });
     //CLICK ON form's submit:
@@ -28,7 +27,7 @@ $(document).ready(function(){
       event.preventDefault();
       var formValues = $(this).serialize();
       $.post('metode.php', formValues ,function(data){
-          $('.contingut').html(data);
+          $('#contingut2').html(data);
       });     
     });
 });            

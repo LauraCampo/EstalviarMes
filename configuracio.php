@@ -28,7 +28,7 @@
 			    </ul>
 			</nav>
         </div>
-            <div class="contingut">
+            <div id="contingut2" class="contingut">
                 <p>Per començar escull una opció del menú.</p>
             </div>
     </body>
