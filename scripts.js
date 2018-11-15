@@ -30,4 +30,19 @@ $(document).ready(function(){
           $('#contingut2').html(data);
       });     
     });
+//PROVEIDOR
+    $('#proveidor').click(function(){
+        $("#contingut2").load('proveidor.php');
+        
+    });
+    //CLICK ON form's submit:
+    //SHOW .php in .content:
+    $('#metode_list form').submit(function(event) {
+      console.log('Afegir proveïdor');
+      event.preventDefault();
+      var formValues = $(this).serialize();
+      $.post('proveidor.php', formValues ,function(data){
+          $('#contingut2').html(data);
+      });     
+    });
 });            

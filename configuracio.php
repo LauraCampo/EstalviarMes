@@ -25,6 +25,9 @@
                                 <li id="submenu2">
                                     <div id="categoria"><a href="#">Categories</a></div><!--categoria.php-->
                                 </li>
+                                <li id="submenu3">
+                                    <div id="proveidor"><a href="#">Proveïdors</a></div><!--proveidor.php-->
+                                </li>
 			    </ul>
 			</nav>
         </div>
