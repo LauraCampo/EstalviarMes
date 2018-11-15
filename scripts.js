@@ -37,7 +37,7 @@ $(document).ready(function(){
     });
     //CLICK ON form's submit:
     //SHOW .php in .content:
-    $('#metode_list form').submit(function(event) {
+    $('#proveidor_list form').submit(function(event) {
       console.log('Afegir proveïdor');
       event.preventDefault();
       var formValues = $(this).serialize();
