@@ -7,7 +7,12 @@ Amb aquest aplicatiu es poden controlar les despeses i els ingressos del nostre 
  1.- Disseny de la base de dades:
 
  ![Screenshot](images/BD.png)
- 
+    Taules relacionades
+        - Moviments -> taula principal
+        - Categories -> tipus de despesa/ingrés
+        - Mètodes de Pagament -> tipus de via de pagament (editable)
+        - Proveïdors -> taula editable
+
  2.- Captura de la pàgina principal:
  
 ![Screenshot](images/screenshot_1.png)
