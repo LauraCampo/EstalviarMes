@@ -13,7 +13,6 @@ $(document).ready(function(){
 //CATEGORIA
     $('#categoria').click(function(){
         $("#contingut2").load('categoria.php');
-        
     });
 //MÈTODE
     $('#metode').click(function(){
@@ -32,8 +31,7 @@ $(document).ready(function(){
     });
 //PROVEIDOR
     $('#proveidor').click(function(){
-        $("#contingut2").load('proveidor.php');
-        
+        $("#contingut2").load('proveidor.php'); 
     });
     //CLICK ON form's submit:
     //SHOW .php in .content:

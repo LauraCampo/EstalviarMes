@@ -15,7 +15,7 @@
 <?php
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     if(isset($_POST["Nom"])){ //en cas de què s'hagi enviat el formulari
-          //aquí afegir dades a la taula Mètode
+          //aquí afegir dades a la taula Proveïdors
                 $insert="INSERT INTO Proveidors VALUES (";
                 $insert.="'".$_POST["Numero_proveidor"]."'".",";
                 $insert.="'".$_POST["Nom"]."'";
