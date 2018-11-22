@@ -8,9 +8,9 @@ Amb aquest aplicatiu es poden controlar les despeses i els ingressos del nostre 
 
  ![Screenshot](images/BD.png)
     Taules relacionades
-        - Moviments -> taula principal
-        - Categories -> tipus de despesa/ingrés
-        - Mètodes de Pagament -> tipus de via de pagament (editable)
+        - Moviments -> taula principal<br>
+        - Categories -> tipus de despesa/ingrés<br>
+        - Mètodes de Pagament -> tipus de via de pagament (editable)<br>
         - Proveïdors -> taula editable
 
  2.- Captura de la pàgina principal:
