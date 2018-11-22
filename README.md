@@ -6,7 +6,7 @@ Amb aquest aplicatiu es poden controlar les despeses i els ingressos del nostre 
 
  1.- Disseny de la base de dades:
 
- ![Screenshot](images/BD.png)
+ ![Screenshot](images/BD.png)<br>
     Taules relacionades:<br>
         - Moviments -> taula principal<br>
         - Categories -> tipus de despesa/ingrés<br>
