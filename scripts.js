@@ -7,7 +7,7 @@ $(document).ready(function(){
 //******** INGRES ***********
 //REALITZAR L'APUNT D'UNA DESPESA:               
     $('#moviment').click(function(){
-        $("#contingut1").load('moviment.html');
+        $("#contingut1").load('moviment.php');
     });
     //CLICK ON form's submit:
     //SHOW .php in .content:
