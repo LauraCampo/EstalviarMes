@@ -9,6 +9,16 @@ $(document).ready(function(){
     $('#moviment').click(function(){
         $("#contingut1").load('moviment.html');
     });
+    //CLICK ON form's submit:
+    //SHOW .php in .content:
+    $('#moviment_list form').submit(function(event) {
+      console.log('Afegir moviment');
+      event.preventDefault();
+      var formValues = $(this).serialize();
+      $.post('moviment.php', formValues ,function(data){
+          $('#contingut1').html(data);
+      });     
+    });
 //******** MENÚ CONFIGURACIÓ ***********
 //CATEGORIA
     $('#categoria').click(function(){
