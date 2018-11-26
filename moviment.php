@@ -70,8 +70,7 @@ while($registre= mysqli_fetch_array($exec)){
                     </tr>
                 </tbody>
                 </table>
-<?php }
-         
+<?php }     
     }
     else{ //(else -> en cas de què NO s'hagi enviat)
  ?>
@@ -79,9 +78,29 @@ while($registre= mysqli_fetch_array($exec)){
                         <!-- apareix número automàtic -->
                             <input class="boton" type="text" size="2" name="Numero_moviment" readonly value="<?php echo($cont);?>">
                             Data:<input type="text" size="10" name="Data">
+                            <!--#TODO:
+                                - que aparegui la data d'avui per defecte
+                                - que es pugui desplegar el calendari
+                            -->
                             Import:<input type="text" size="10" name="import">
+                            <!--#TODO:
+                                - que aparegui el simbol d'euros
+                                - que hi hagi una casella adjunta amb ingrés o
+                                  despesa i que si es despesa que aparegui el
+                                  simbol menys.
+                            -->
                             Categoria:<input type="text" size="10" name="Categoria">
+                            <!--#TODO:
+                                - que es desplegui el tipus de despesa
+                                    TAULA: Categories
+                                - afegir icones al tipus de despesa
+                            -->
                             Proveïdor:<input type="text" size="10" name="Proveidor">
+                            <!--#TODO:
+                                - que es desplegui la llista de proveïdors
+                                    TAULA: Proveidors
+                                - relacionar la llista de proveïdors amb el tipus de despesa
+                            -->
                             Concepte:<input type="text" size="20" name="Concepte">
                             Mètode:<input type="text" size="10" name="Metode">
                         <!-- Esborrar formulari -->
