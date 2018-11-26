@@ -73,36 +73,55 @@ while($registre= mysqli_fetch_array($exec)){
 <?php }     
     }
     else{ //(else -> en cas de què NO s'hagi enviat)
+        $sel="SELECT * FROM Moviments";
+        $exec= mysqli_query($conexion, $sel);
+//        if (!$check1_res) {
+//            printf("Error: %s\n", mysqli_error($conexion));
+//            exit();
+//        }
+        while($registre= mysqli_fetch_array($exec)){
+            $cont = $registre[0];
+            echo $cont;
+            if($cont == NULL){
+                $cont="1";
+                echo $cont;
+            }else{
+                $cont=$cont+1;
+                echo $cont;
+            }
+        }
  ?>
+            <h3>Afegeix un nou moviment:</h3>
                     <form action="moviment.php" method="post" >
                         <!-- apareix número automàtic -->
-                            <input class="boton" type="text" size="2" name="Numero_moviment" readonly value="<?php echo($cont);?>">
-                            Data:<input type="text" size="10" name="Data">
+                        <input class="boton" type="text" size="2" name="Numero_moviment" readonly value="<?php echo($cont);?>"><br>
+                        Data(AAAA-MM-DD):<input type="text" size="10" name="Data"><br>
                             <!--#TODO:
+                                format data MySQL: AAAA-MM-DD
                                 - que aparegui la data d'avui per defecte
                                 - que es pugui desplegar el calendari
                             -->
-                            Import:<input type="text" size="10" name="import">
+                            Import:<input type="text" size="10" name="import"><br>
                             <!--#TODO:
                                 - que aparegui el simbol d'euros
                                 - que hi hagi una casella adjunta amb ingrés o
                                   despesa i que si es despesa que aparegui el
                                   simbol menys.
                             -->
-                            Categoria:<input type="text" size="10" name="Categoria">
+                            Categoria:<input type="text" size="10" name="Categoria"><br>
                             <!--#TODO:
                                 - que es desplegui el tipus de despesa
                                     TAULA: Categories
                                 - afegir icones al tipus de despesa
                             -->
-                            Proveïdor:<input type="text" size="10" name="Proveidor">
+                            Proveïdor:<input type="text" size="10" name="Proveidor"><br>
                             <!--#TODO:
                                 - que es desplegui la llista de proveïdors
                                     TAULA: Proveidors
                                 - relacionar la llista de proveïdors amb el tipus de despesa
                             -->
-                            Concepte:<input type="text" size="20" name="Concepte">
-                            Mètode:<input type="text" size="10" name="Metode">
+                            Concepte:<input type="text" size="20" name="Concepte"><br>
+                            Mètode:<input type="text" size="10" name="Metode"><br>
                         <!-- Esborrar formulari -->
                             <input type="reset" class="boto" value="Esborrar">
                         <!-- Acceptar nou mètode -->

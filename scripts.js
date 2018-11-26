@@ -4,8 +4,8 @@ $(document).ready(function(){
     $('#config_icon').click(function(){
         $("#contingut1").load('configuracio.php');
     });
-//******** INGRES ***********
-//REALITZAR L'APUNT D'UNA DESPESA:               
+//******** AFEGIR MOVIMENT ***********
+//AFEGIR MOVIMENT:             
     $('#moviment').click(function(){
         $("#contingut1").load('moviment.php');
     });
