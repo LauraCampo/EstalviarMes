@@ -10,8 +10,7 @@
         <script src="jQuery_3.3.1.js"></script>
         <script type="text/javascript" src="scripts.js"></script>
     </head>
-    <body>
-        <h3>Llistat de moviments creats:</h3>   
+    <body> 
 <?php
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     if(isset($_POST["Nom"])){ //en cas de què s'hagi enviat el formulari
@@ -31,19 +30,15 @@
 //            printf("Error: %s\n", mysqli_error($conexion));
 //            exit();
 //        }
-          goto a;
-    }
-    else{ //(else -> en cas de què NO s'hagi enviat)
-        a:
-        $sel="SELECT * FROM Moviments";
+          $sel="SELECT * FROM Moviments";
         $exec= mysqli_query($conexion, $sel);
 //        if (!$check1_res) {
 //            printf("Error: %s\n", mysqli_error($conexion));
 //            exit();
 //        }
-?>
+//        ?>
+        <h3>Llistat de moviments creats:</h3>
         <div id="moviment_list">
-            <form action="moviment.php" method="post" >
                 <table>
                     <thead>
                     <tr>
@@ -71,42 +66,29 @@ while($registre= mysqli_fetch_array($exec)){
                         <td><?php echo($registre[4]);?></td><!--Proveidor-->
                         <td><?php echo($registre[5]);?></td><!--Concepte-->
                         <td><?php echo($registre[6]);?></td><!--Mètode-->
-                        <td><!-- esborrar registre -->    
-                        </td>
+                        <td><!-- esborrar registre --> </td>
                     </tr>
-<?php } ?>
-                    <tr>
-                        <td><!-- apareix número automàtic -->
+                </tbody>
+                </table>
+<?php }
+         
+    }
+    else{ //(else -> en cas de què NO s'hagi enviat)
+ ?>
+                    <form action="moviment.php" method="post" >
+                        <!-- apareix número automàtic -->
                             <input class="boton" type="text" size="2" name="Numero_moviment" readonly value="<?php echo($cont);?>">
-                        </td>
-                        <td>
                             Data:<input type="text" size="10" name="Data">
-                        </td>
-                        <td>
                             Import:<input type="text" size="10" name="import">
-                        </td>
-                        <td>
                             Categoria:<input type="text" size="10" name="Categoria">
-                        </td>
-                        <td>
                             Proveïdor:<input type="text" size="10" name="Proveidor">
-                        </td>
-                        <td>
                             Concepte:<input type="text" size="20" name="Concepte">
-                        </td>
-                        <td>
                             Mètode:<input type="text" size="10" name="Metode">
-                        </td>
-                        <td><!-- Esborrar formulari -->
+                        <!-- Esborrar formulari -->
                             <input type="reset" class="boto" value="Esborrar">
-                        </td>
-                        <td><!-- Acceptar nou mètode -->
+                        <!-- Acceptar nou mètode -->
                             <input type="submit" class="boto" value="Afegir" name="afegir">
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
-    </form>
+                    </form>
 <?php } ?>     
 </div>
     </body>
