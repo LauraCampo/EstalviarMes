@@ -27,7 +27,6 @@ $(document).ready(function(){
 //MÈTODE
     $('#metode').click(function(){
         $("#contingut2").load('metode.php');
-        
     });
     //CLICK ON form's submit:
     //SHOW .php in .content:
