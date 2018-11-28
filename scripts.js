@@ -11,7 +11,7 @@ $(document).ready(function(){
     });
     //CLICK ON form's submit:
     //SHOW .php in .content:
-    $('#moviment_list form').submit(function(event) {
+    $('#moviment_list form').submit(function(event) { 
       console.log('Afegir moviment');
       event.preventDefault();
       var formValues = $(this).serialize();

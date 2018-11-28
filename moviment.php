@@ -13,8 +13,9 @@
     <body> 
 <?php
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
-    if(isset($_POST["Nom"])){ //en cas de què s'hagi enviat el formulari
-          //aquí afegir dades a la taula Mètode
+    if(isset($_POST["Import"])){ //en cas de què s'hagi enviat el formulari
+    $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
+          //aquí afegir dades a la taula Moviments
                 $insert="INSERT INTO Moviments VALUES (";
                 $insert.="'".$_POST["Numero_moviment"]."'".",";
                 $insert.="'".$_POST["Data"]."'".",";
@@ -22,9 +23,9 @@
                 $insert.="'".$_POST["Categoria"]."'".",";
                 $insert.="'".$_POST["Proveidor"]."'".",";
                 $insert.="'".$_POST["Concepte"]."'".",";
-                $insert.="'".$_POST["Mètode"]."'";
+                $insert.="'".$_POST["Metode"]."'";
                 $insert.=")";
-                //echo $insert;
+                echo $insert;
                 $exec= mysqli_query($conexion, $insert);
 //        if (!$check1_res) {
 //            printf("Error: %s\n", mysqli_error($conexion));
@@ -38,7 +39,7 @@
 //        }
 //        ?>
         <h3>Llistat de moviments creats:</h3>
-        <div id="moviment_list">
+        <div id="moviment_list_final">
                 <table>
                     <thead>
                     <tr>
@@ -70,6 +71,7 @@ while($registre= mysqli_fetch_array($exec)){
                     </tr>
                 </tbody>
                 </table>
+        </div>
 <?php }     
     }
     else{ //(else -> en cas de què NO s'hagi enviat)
@@ -88,6 +90,7 @@ while($registre= mysqli_fetch_array($exec)){
                             }
  ?>
             <h3>Afegeix un nou moviment:</h3>
+            <div id="moviment_list">
                     <form action="moviment.php" method="post" >
                         <!-- apareix número automàtic -->
                         <input type="text" size="10" name="Numero_moviment" readonly value="<?php echo($cont);?>"><br>
@@ -96,7 +99,7 @@ while($registre= mysqli_fetch_array($exec)){
                                 - que aparegui la data d'avui per defecte
                                 - que es pugui desplegar el calendari
                             -->
-                            Import:<input type="text" size="10" name="import">€
+                            Import:<input type="text" size="10" name="Import">€
                             <input type="radio" name="ing_des" value="????" checked>Ingrès
                             <input type="radio" name="ing_des" value="????">Despesa
                             <br>
@@ -146,7 +149,7 @@ while($registre= mysqli_fetch_array($exec)){
                             <input type="reset" class="boto" value="Esborrar">
                             <input type="submit" class="boto" value="Afegir" name="afegir">
                     </form>
-<?php } ?>     
-</div>
+<?php } ?>
+                </div>
     </body>
 </html>
