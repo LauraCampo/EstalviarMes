@@ -51,7 +51,6 @@
                         <th>Proveidor</th>
                         <th>Concepte</th>
                         <th>Mètode</th>
-                        <th>Esborrar</th>
                     </tr>
                 </thead>
                 <tbody>        
@@ -66,7 +65,6 @@ while($registre= mysqli_fetch_array($exec)){
                         <td><?php echo($registre[4]);?></td><!--Proveidor-->
                         <td><?php echo($registre[5]);?></td><!--Concepte-->
                         <td><?php echo($registre[6]);?></td><!--Mètode-->
-                        <td><!-- esborrar registre --> </td>
                     </tr>
                 
         

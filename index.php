@@ -41,14 +41,12 @@
                 - l'enllaç a configuració que sigui només una icona (a un costat)
             -->
 			<nav>
-			<!-- menú lateral (principal) -->
 			    <ul id="lista_menu">
                                 <li id="submenu1">
                                     <div id="moviment"><a href="#">Afegir moviment</a></div><!--moviment.html-->
                                 </li>
 			        <li id="submenu2">Consultes
-                                    <div id="ultimsmoviments"><a href="#">Moviments últims 15 dies</a></div><!--.php-->
-                                    <div id="moviments_totals"><a href="#">Moviments totals</a></div><!--.php-->
+                                    <div id="moviments_totals"><a href="#">Moviments totals</a></div><!--extracte.php-->
                                 </li>
 			    </ul>
 			</nav>

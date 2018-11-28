@@ -19,6 +19,10 @@ $(document).ready(function(){
           $('#contingut1').html(data);
       });     
     });
+//CLICAR A MOVIMENTS TOTALS:
+    $('#moviments_totals').click(function(){
+        $("#contingut1").load('extracte.php');
+    });   
 //******** MENÚ CONFIGURACIÓ ***********
 //CATEGORIA
     $('#categoria').click(function(){
