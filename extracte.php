@@ -28,7 +28,7 @@ $exec= mysqli_query($conexion, $sel);
                     <tr>
                         <th>Posició</th>
                         <th>Data</th>
-                        <th>Import</th>
+                        <th class="columna_import">Import</th>
                         <th>Categoria</th>
                         <th>Proveidor</th>
                         <th>Concepte</th>
@@ -41,8 +41,8 @@ while($registre= mysqli_fetch_array($exec)){
 ?>
                 <tr>
                         <td><?php echo($registre[0]);?></td><!--Referencia-->
-                        <td><?php echo($registre[1]);?></td><!--Data-->
-                        <td><?php echo($registre[2]);?></td><!--Import-->
+                        <td><?php echo(date("d-m-Y", strtotime($registre[1])));?></td><!--Data-->
+                        <td class="columna_import"><?php echo($registre[2]);?></td><!--Import-->
                         <td><?php echo($registre[3]);?></td><!--Categoria-->
                         <td><?php echo($registre[4]);?></td><!--Proveidor-->
                         <td><?php echo($registre[5]);?></td><!--Concepte-->

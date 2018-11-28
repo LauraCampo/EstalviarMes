@@ -15,10 +15,11 @@
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     if(isset($_POST["Import"])){ //en cas de què s'hagi enviat el formulari
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
+    $Data=$_POST["Any"].$_POST["Mes"].$_POST["Dia"];
           //aquí afegir dades a la taula Moviments
                 $insert="INSERT INTO Moviments VALUES (";
                 $insert.="'".$_POST["Numero_moviment"]."'".",";
-                $insert.="'".$_POST["Data"]."'".",";
+                $insert.="'".$Data."'".",";
                 $insert.="'".$_POST["Import"]."'".",";
                 $insert.="'".$_POST["Categoria"]."'".",";
                 $insert.="'".$_POST["Proveidor"]."'".",";
@@ -46,7 +47,7 @@
                     <tr>
                         <th>Posició</th>
                         <th>Data</th>
-                        <th>Import</th>
+                        <th class="columna_import">Import</th>
                         <th>Categoria</th>
                         <th>Proveidor</th>
                         <th>Concepte</th>
@@ -59,8 +60,8 @@ while($registre= mysqli_fetch_array($exec)){
 ?>
                     <tr>
                         <td><?php echo($registre[0]);?></td><!--Referencia-->
-                        <td><?php echo($registre[1]);?></td><!--Data-->
-                        <td><?php echo($registre[2]);?></td><!--Import-->
+                        <td><?php echo(date("d-m-Y", strtotime($registre[1])));?></td><!--Data-->
+                        <td class="columna_import"><?php echo($registre[2]);?></td><!--Import-->
                         <td><?php echo($registre[3]);?></td><!--Categoria-->
                         <td><?php echo($registre[4]);?></td><!--Proveidor-->
                         <td><?php echo($registre[5]);?></td><!--Concepte-->
@@ -93,7 +94,11 @@ while($registre= mysqli_fetch_array($exec)){
                     <form action="moviment.php" method="post" >
                         <!-- apareix número automàtic -->
                         <input type="text" size="10" name="Numero_moviment" readonly value="<?php echo($cont);?>"><br>
-                        Data(AAAA-MM-DD):<input type="text" size="10" name="Data"><br>
+                            Data:
+                            <input type="text" size="2" name="Dia">-
+                            <input type="text" size="2" name="Mes">-
+                            <input type="text" size="4" name="Any">
+                            <br>
                             <!--#TODO:
                                 - que aparegui la data d'avui per defecte
                                 - que es pugui desplegar el calendari
@@ -103,7 +108,7 @@ while($registre= mysqli_fetch_array($exec)){
                             <input type="radio" name="ing_des" value="????">Despesa
                             <br>
                             <!-- #TODO: si es despesa que aparegui el simbol menys al davant -->
-                                <label for="Categoria">Escollir categoria:</label> <br/>
+                                <label for="Categoria">Escollir categoria:</label>
                                 <select id="Categoria" name="Categoria">
                                     <option value="" selected="selected">- selecciona -</option>
                                     <!-- aqui ha de fer un recorregut x la taula: -->
@@ -117,7 +122,7 @@ while($registre= mysqli_fetch_array($exec)){
                                     ?>        
                                 </select><br>
                             <!-- #TODO: afegir icones al tipus de despesa -->
-                            <label for="Proveidor">Escollir proveïdor:</label> <br/>
+                            <label for="Proveidor">Escollir proveïdor:</label>
                                 <select id="Proveidor" name="Proveidor">
                                     <option value="" selected="selected">- selecciona -</option>
                                     <!-- aqui ha de fer un recorregut  x la taula: -->
@@ -132,7 +137,7 @@ while($registre= mysqli_fetch_array($exec)){
                                 </select><br>
                             <!-- #TODO: relacionar la llista de proveïdors amb el tipus de despesa -->
                             Concepte:<input type="text" size="30" name="Concepte"><br>
-                            <label for="Metode">Escollir mètode:</label> <br/>
+                            <label for="Metode">Escollir mètode:</label>
                                 <select id="Metode" name="Metode">
                                     <option value="" selected="selected">- selecciona -</option>
                                     <!-- aqui ha de fer un recorregut  x la taula: -->

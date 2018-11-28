@@ -30,4 +30,7 @@ body {
 #notification_reminder{
     color: gray;
 }
+.columna_import{
+    text-align: right;
+}
 

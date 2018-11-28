@@ -45,7 +45,7 @@
                                 <li id="submenu1">
                                     <div id="moviment"><a href="#">Afegir moviment</a></div><!--moviment.html-->
                                 </li>
-			        <li id="submenu2">Consultes
+			        <li id="submenu2">
                                     <div id="moviments_totals"><a href="#">Moviments totals</a></div><!--extracte.php-->
                                 </li>
 			    </ul>
