@@ -49,9 +49,16 @@
                 </thead>
                 <tbody>        
 <?php
+$conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
+$sel="SELECT MAX(Referencia) AS Referencia FROM Proveidors";
+                            $exec0= mysqli_query($conexion, $sel);
+                            while($registro= mysqli_fetch_array($exec0)){
+                                $cont = $registro[0];
+                                $cont=$cont+1;
+                            }
 while($registre= mysqli_fetch_array($exec)){
-    $cont = $registre[0];
-    $cont=$cont+1;
+//    $cont = $registre[0];
+//    $cont=$cont+1;
 ?>
                     <tr>
                         <td><?php echo($registre[0]);?></td><!--Referencia-->
