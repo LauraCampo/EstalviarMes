@@ -31,7 +31,7 @@
 //            printf("Error: %s\n", mysqli_error($conexion));
 //            exit();
 //        }
-        $sel="SELECT * FROM Moviments ORDER BY Data DESC LIMIT 10";
+        $sel="SELECT * FROM Moviments ORDER BY Data DESC LIMIT 25";
         //$sel="SELECT * FROM Moviments";
         $exec= mysqli_query($conexion, $sel);
 //        if (!$check1_res) {
