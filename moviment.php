@@ -25,19 +25,20 @@
                 $insert.="'".$_POST["Concepte"]."'".",";
                 $insert.="'".$_POST["Metode"]."'";
                 $insert.=")";
-                echo $insert;
+                //echo $insert;
                 $exec= mysqli_query($conexion, $insert);
 //        if (!$check1_res) {
 //            printf("Error: %s\n", mysqli_error($conexion));
 //            exit();
 //        }
-          $sel="SELECT * FROM Moviments";
+        $sel="SELECT * FROM Moviments ORDER BY Data DESC LIMIT 10";
+        //$sel="SELECT * FROM Moviments";
         $exec= mysqli_query($conexion, $sel);
 //        if (!$check1_res) {
 //            printf("Error: %s\n", mysqli_error($conexion));
 //            exit();
 //        }
-//        ?>
+        ?>
         <h3>Llistat de moviments creats:</h3>
         <div id="moviment_list_final">
                 <table>
@@ -56,8 +57,6 @@
                 <tbody>        
 <?php
 while($registre= mysqli_fetch_array($exec)){
-    $cont = $registre[0];
-    $cont=$cont+1;
 ?>
                     <tr>
                         <td><?php echo($registre[0]);?></td><!--Referencia-->
@@ -69,11 +68,13 @@ while($registre= mysqli_fetch_array($exec)){
                         <td><?php echo($registre[6]);?></td><!--Mètode-->
                         <td><!-- esborrar registre --> </td>
                     </tr>
+                
+        
+<?php } ?>
                 </tbody>
                 </table>
         </div>
-<?php }     
-    }
+<?php   }
     else{ //(else -> en cas de què NO s'hagi enviat)
         $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
         //$sel="SELECT * FROM Moviments";
