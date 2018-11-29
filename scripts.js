@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('#moviment').click(function(){
         $("#contingut1").load('moviment.php');
     });
-    //escollir si es despesa o ingrè
+    //escollir si es despesa o ingrès
     //si es despesa afegir "-" +  color vermell
     $('#despesa').click(function(){
         $("#import").addClass("numeros_vermells");

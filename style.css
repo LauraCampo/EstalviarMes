@@ -36,4 +36,16 @@ body {
 .numeros_vermells{
     color:red;
 }
+a:link {
+    text-decoration: none;
+    color:black;
+}
+
+a:visited {
+    text-decoration: none;
+    color:black;
+}
+ul {
+    list-style-type: none;
+}
 
