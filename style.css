@@ -16,11 +16,16 @@ body {
     float: right;
     padding: 10px;
 }
-#notifications, .caixa_formulari, .contingut {
+#notifications, .contingut {
     border: 2px solid pink;
     border-radius: 15px;
     margin: 2px;
     background-color: white;
+    font-family: 'Mali', cursive;
+    font-size: 15px;
+}
+.caixa_formulari{
+    margin: 2px;
     font-family: 'Mali', cursive;
     font-size: 15px;
 }
@@ -45,8 +50,16 @@ a:visited {
     text-decoration: none;
     color:black;
 }
+li{
+    display: inline-block;
+    border: 2px solid pink;
+    border-radius: 15px;
+    background-color: white;
+    padding: 5px;
+}
 ul {
     list-style-type: none;
+    
 }
 /*estils per a la vista de la taula: */
 th, td{

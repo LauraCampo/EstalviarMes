@@ -51,10 +51,10 @@
 			<nav>
 			    <ul id="lista_menu">
                                 <li id="submenu1">
-                                    <div id="moviment"><a href="#">Afegir moviment</a></div><!--moviment.html-->
+                                    <div id="moviment"><a href="#">Afegir nou moviment</a></div><!--moviment.html-->
                                 </li>
 			        <li id="submenu2">
-                                    <div id="moviments_totals"><a href="#">Moviments totals</a></div><!--extracte.php-->
+                                    <div id="moviments_totals"><a href="#">Veure moviments totals</a></div><!--extracte.php-->
                                 </li>
 			    </ul>
 			</nav>
