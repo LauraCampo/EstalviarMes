@@ -44,14 +44,13 @@
         <div id="moviment_list_final">
                 <table>
                     <thead>
-                    <tr>
-                        <th>Posició</th>
+                    <tr>  
                         <th>Data</th>
-                        <th class="columna_import">Import</th>
                         <th>Categoria</th>
-                        <th>Proveidor</th>
+                        <th>Proveïdor</th>
                         <th>Concepte</th>
                         <th>Mètode</th>
+                        <th>Import</th>
                     </tr>
                 </thead>
                 <tbody>        
@@ -59,16 +58,13 @@
 while($registre= mysqli_fetch_array($exec)){
 ?>
                     <tr>
-                        <td><?php echo($registre[0]);?></td><!--Referencia-->
                         <td><?php echo(date("d-m-Y", strtotime($registre[1])));?></td><!--Data-->
-                        <td class="columna_import"><?php echo($registre[2]);?></td><!--Import-->
                         <td><?php echo($registre[3]);?></td><!--Categoria-->
                         <td><?php echo($registre[4]);?></td><!--Proveidor-->
                         <td><?php echo($registre[5]);?></td><!--Concepte-->
                         <td><?php echo($registre[6]);?></td><!--Mètode-->
+                        <td class="columna_import"><?php echo($registre[2]);?>€</td><!--Import-->
                     </tr>
-                
-        
 <?php } ?>
                 </tbody>
                 </table>
@@ -93,8 +89,7 @@ while($registre= mysqli_fetch_array($exec)){
             <div id="moviment_list">
                     <form action="moviment.php" method="post" >
                         <!-- apareix número automàtic -->
-                        <input type="text" size="10" name="Numero_moviment" readonly value="<?php echo($cont);?>"><br>
-                            
+                        <input type="text" size="10" name="Numero_moviment" readonly value="<?php echo($cont);?>"><br>      
                         Data:
                             <?php
                              $today = getdate();

@@ -36,7 +36,11 @@ $(document).ready(function(){
 //CLICAR A MOVIMENTS TOTALS:
     $('#moviments_totals').click(function(){
         $("#contingut1").load('extracte.php');
-    });   
+    });
+//VISTES DE LA TAULA DE MOVIMENTS:
+    $('table thead th').addClass('capçalera');
+    $('table tbody tr:even').addClass('parell');
+    $('table tbody tr:odd').addClass('imparell');
 //******** MENÚ CONFIGURACIÓ ***********
 //CATEGORIA
     $('#categoria').click(function(){

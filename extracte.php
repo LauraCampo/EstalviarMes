@@ -27,10 +27,10 @@ $exec= mysqli_query($conexion, $sel);
                     <tr>
                         <th>Data</th>
                         <th>Categoria</th>
-                        <th>Proveidor</th>
+                        <th>Proveïdor</th>
                         <th>Concepte</th>
                         <th>Mètode</th>
-                        <th class="columna_import">Import</th>
+                        <th>Import</th>
                     </tr>
                 </thead>
                 <tbody>  
@@ -43,7 +43,7 @@ while($registre= mysqli_fetch_array($exec)){
                         <td><?php echo($registre[4]);?></td><!--Proveidor-->
                         <td><?php echo($registre[5]);?></td><!--Concepte-->
                         <td><?php echo($registre[6]);?></td><!--Mètode-->
-                        <td class="columna_import"><?php echo($registre[2]);?></td><!--Import-->
+                        <td class="columna_import"><?php echo($registre[2]);?>€</td><!--Import-->
                     </tr>
 <?php } ?>
             </tbody>

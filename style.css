@@ -48,4 +48,18 @@ a:visited {
 ul {
     list-style-type: none;
 }
+/*estils per a la vista de la taula: */
+th, td{
+    border-radius: 15px;
+    padding:5px;
+}
+.capçalera{
+    background-color: #F8E0F7;  
+}
+.parell{
+    background-color: white;
+}
+.imparell{
+    background-color: lightgray;
+}
 
