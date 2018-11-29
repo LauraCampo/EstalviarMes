@@ -30,7 +30,15 @@
                 </a>
                 </div>
             <div id="notification_reminder">
-                <p>No tens missatges per avui</p>
+<!--                <p>No tens missatges per avui</p>-->
+                <?php
+                $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
+                $sel="SELECT SUM(Import)AS value_sum FROM Moviments";
+                $exec= mysqli_query($conexion, $sel);
+                $row = mysqli_fetch_assoc($exec); 
+                $saldo = $row['value_sum'];
+                ?>
+                <p>Saldo total:<?php echo($saldo) ?>€</p>
             </div>
         </div>
         </header>
