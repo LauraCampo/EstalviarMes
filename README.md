@@ -19,7 +19,7 @@ Amb aquest aplicatiu es poden controlar les despeses i els ingressos del nostre 
 
 ## Funcions ##
 
-Hi ha dues funcions principals:
+Hi ha dues funcions principals:<br>
         - introduir un apunt<br>
         - veure tots el moviments efectuats<br>
 
