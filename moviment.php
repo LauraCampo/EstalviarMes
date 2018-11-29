@@ -94,18 +94,21 @@ while($registre= mysqli_fetch_array($exec)){
                     <form action="moviment.php" method="post" >
                         <!-- apareix número automàtic -->
                         <input type="text" size="10" name="Numero_moviment" readonly value="<?php echo($cont);?>"><br>
-                            Data:
-                            <input type="text" size="2" name="Dia">-
-                            <input type="text" size="2" name="Mes">-
-                            <input type="text" size="4" name="Any">
+                            
+                        Data:
+                            <?php
+                             $today = getdate();
+                            ?>
+                            <input type="text" size="2" name="Dia" value="<?php echo $today[mday] ?>">-
+                            <input type="text" size="2" name="Mes" value="<?php echo $today[mon] ?>">-
+                            <input type="text" size="4" name="Any" value="<?php echo $today[year] ?>">
                             <br>
                             <!--#TODO:
-                                - que aparegui la data d'avui per defecte
                                 - que es pugui desplegar el calendari
                             -->
                             Import:<input type="text" size="10" name="Import">€
-                            <input type="radio" name="ing_des" value="????" checked>Ingrès
-                            <input type="radio" name="ing_des" value="????">Despesa
+                            <input  type="radio" name="ing_des" value="????" checked>Ingrès
+                            <input id="despesa" type="radio" name="ing_des" value="????">Despesa
                             <br>
                             <!-- #TODO: si es despesa que aparegui el simbol menys al davant -->
                                 <label for="Categoria">Escollir categoria:</label>

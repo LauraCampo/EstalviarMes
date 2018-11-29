@@ -21,7 +21,6 @@ $exec= mysqli_query($conexion, $sel);
 //    exit();
 //}
 ?>
-
         <div id="moviment_list_final">
                 <table>
                     <thead>

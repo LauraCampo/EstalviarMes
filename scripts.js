@@ -9,6 +9,10 @@ $(document).ready(function(){
     $('#moviment').click(function(){
         $("#contingut1").load('moviment.php');
     });
+    //escollir si es despesa o ingrès -> si es despesa afegir "-"
+    $('#despesa').click(function(){
+        $("#contingut1").load('moviment.php');
+    });
     //CLICK ON form's submit:
     //SHOW .php in .content:
     $('#moviment_list form').submit(function(event) { 
