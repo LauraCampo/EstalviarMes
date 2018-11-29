@@ -9,9 +9,19 @@ $(document).ready(function(){
     $('#moviment').click(function(){
         $("#contingut1").load('moviment.php');
     });
-    //escollir si es despesa o ingrès -> si es despesa afegir "-"
+    //escollir si es despesa o ingrè
+    //si es despesa afegir "-" +  color vermell
     $('#despesa').click(function(){
-        $("#contingut1").load('moviment.php');
+        $("#import").addClass("numeros_vermells");
+        $("#import").attr('value','-0.01');//que es posi aquest valor si cliques a despesa
+        $("#import").attr('max','-0.01');//el màxim valor possible si es negatiu
+        $("#import").removeAttr('min');//sense mínim possible
+    });
+    //si es ingrès color negre
+    $('#ingres').click(function(){
+        $("#import").removeClass("numeros_vermells");
+        $("#import").attr('min','0.01'); //el minim valor possible si es positiu
+        $("#import").removeAttr('max');//sense màxim possible
     });
     //CLICK ON form's submit:
     //SHOW .php in .content:

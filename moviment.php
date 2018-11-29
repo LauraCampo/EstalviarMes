@@ -106,8 +106,8 @@ while($registre= mysqli_fetch_array($exec)){
                             <!--#TODO:
                                 - que es pugui desplegar el calendari
                             -->
-                            Import:<input type="text" size="10" name="Import">€
-                            <input  type="radio" name="ing_des" value="????" checked>Ingrès
+                            Import:<input id="import" type="number" step="0.01" size="6" name="Import" value="0">€
+                            <input  id="ingres" type="radio" name="ing_des" value="????" checked>Ingrès
                             <input id="despesa" type="radio" name="ing_des" value="????">Despesa
                             <br>
                             <!-- #TODO: si es despesa que aparegui el simbol menys al davant -->
