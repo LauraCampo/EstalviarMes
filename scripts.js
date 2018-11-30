@@ -37,10 +37,47 @@ $(document).ready(function(){
     $('#moviments_totals').click(function(){
         $("#contingut1").load('extracte.php');
     });
-//VISTES DE LA TAULA DE MOVIMENTS:
+//******** VISTES DE LA TAULA DE MOVIMENTS ***********
+    var estilsfileres=function(taula){
+        $('tbody tr:even',taula).removeClass('imparell').addClass('parell');
+        $('tbody tr:odd',taula).removeClass('parell').addClass('imparell');
+    };
     $('table thead th').addClass('capçalera');
     $('table tbody tr:even').addClass('parell');
     $('table tbody tr:odd').addClass('imparell');
+    
+    $('table').each(function(){
+        var taula=$(this); //contindrà tota la taula
+        $('thead th',taula).each(function(columna){ //capçalera
+            estilsfileres(taula);
+            var capçalera=$(this);
+            if(capçalera.is('.capçalera')){ //retorna TRUE si la variable capçalera és de la classe .capçalera
+                //función para cuando situamos el cursor sobre la cabecera
+                capçalera.addClass('clickable').hover(function(){
+                   capçalera.addClass('hover'); 
+                },function(){
+                    capçalera.removeClass('hover');
+                });
+                //función para cuando se hace clic, aqui es donde se ordena
+                capçalera.click(function(){ //cuando hacemos click en la cabecera
+                    //obtenemos un array con todas las filas
+                    var files=taula.find('tbody > tr').get();
+                    //Función de ordenación
+                    files.sort(function(a,b){
+                        var clauA=$(a).children('td').eq(columna).text().toUpperCase();
+                        var clauB=$(b).children('td').eq(columna).text().toUpperCase();
+                        if(clauA < clauB) return -1;
+                        if(clauB > clauA) return 1;
+                        return 0;
+                    });
+                    $.each(files,function(index,fila){
+                        taula.children('tbody').append(fila);
+                    });//each
+                    estilsfileres(taula);
+                });//click
+            }//if
+        });//$(thead th,tabla)
+    }); //table
 //******** MENÚ CONFIGURACIÓ ***********
 //CATEGORIA
     $('#categoria').click(function(){

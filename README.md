@@ -21,5 +21,9 @@ Amb aquest aplicatiu es poden controlar les despeses i els ingressos del nostre 
 
 Hi ha dues funcions principals:<br>
         - introduir un apunt<br>
+            Es pot introduir tant una despesa com un ingrès,
+            i després es mostren tots el moviments efectuats.
         - veure tots el moviments efectuats<br>
+            Es mostren tots el moviments efectuats,
+            endreçats amb el més nou a dalt.
 

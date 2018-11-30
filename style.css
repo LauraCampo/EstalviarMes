@@ -63,7 +63,7 @@ ul {
 }
 /*estils per a la vista de la taula: */
 th, td{
-    border-radius: 15px;
+    border-radius: 5px;
     padding:5px;
 }
 .capçalera{
@@ -74,5 +74,11 @@ th, td{
 }
 .imparell{
     background-color: lightgray;
+}
+.hover{
+    background-color: blue;
+}
+.clicable{
+    color: red;
 }
 
