@@ -38,35 +38,31 @@ $(document).ready(function(){
         $("#contingut1").load('extracte.php');
     });
 //******** VISTES DE LA TAULA DE MOVIMENTS ***********
-    var estilsfileres=function(taula){
-        $('tbody tr:even',taula).removeClass('imparell').addClass('parell');
-        $('tbody tr:odd',taula).removeClass('parell').addClass('imparell');
-    };
-    $('table thead th').addClass('capçalera');
-    $('table tbody tr:even').addClass('parell');
-    $('table tbody tr:odd').addClass('imparell');
-    
-    $('table').each(function(){
-        var paginaActual=0;
-        var fileresperPagina=5;
-        var taula=$(this); //contindrà tota la taula
-        //Definim la funció de repaginat
-        var repaginar = function(){
-            taula.find('tbody tr').hide().slice(paginaActual*fileresperPagina,
-            (paginaActual+1)*fileresperPagina).show();
-        }
-        //Obtenim total de fileres i calculem quantes pàgines hauran
-        var nombreFileres=taula.find('tbody tr').length;
-                  var nombrePagines=Math.ceil(nombreFileres/fileresperPagina);
-                  //Preparem els números de pàgina per utilitzar paginació
+var estilosfilas=function(tabla){
+            $('tbody tr:even', tabla).removeClass('impar').addClass('par');
+            $('tbody tr:odd', tabla).removeClass('par').addClass('impar');
+                };
+               $('table').each(function(){
+                  var paginaActual=0;
+                  var filasporPagina=5;
+                  var tabla=$(this);
+                  //Definimos la función de repaginado
+                  var repaginar = function(){
+                      tabla.find('tbody tr').hide().slice(paginaActual*filasporPagina,
+                      (paginaActual+1)*filasporPagina).show();
+                  }
+                  //Obtenemos total de filas y calculamos cuantas páginas habrán
+                  var numeroFilas=tabla.find('tbody tr').length;
+                  var numeroPaginas=Math.ceil(numeroFilas/filasporPagina);
+                  //Preparamos los números de página para utilizar paginación
                   var capapagina=$('<div class="pagina"></div>');
                   for(var pagina=0;pagina<numeroPaginas;pagina++){
                       $('<span class="numero-pagina"></span>')
                               .text(pagina+1)
-                              .bind('click',{novaPagina:pagina},function(event){
-                                  paginaActual=event.data['novaPagina'];
+                              .bind('click',{nuevaPagina:pagina},function(event){
+                                  paginaActual=event.data['nuevaPagina'];
                                   repaginar();
-                                  $(this).addClass('veurepagina').siblings().removeClass('veurepagina');
+                                  $(this).addClass('verpagina').siblings().removeClass('verpagina');
                               }).appendTo(capapagina).addClass('clickable');
                   }
                   /*
@@ -76,31 +72,30 @@ $(document).ready(function(){
                   */
                   //Insertamos los números de página antes de la tabla
                   repaginar();
-                  capapagina.insertBefore(taula);
+                  capapagina.insertBefore(tabla);
                   //repaginar();
-                  taula.find('tbody tr').hide().slice(paginaActual*fileresperPagina,
-                  (paginaActual+1)*fileresperPagina).show();
-        estilosfilas(tabla); //Aplicamos los estilos
-        $('thead th',taula).each(function(columna){ //capçalera
-//            estilsfileres(taula);
-//Busquem a les cel.les de la capçalera el tipus d'ordenació
-            var capçalera=$(this);
-            var trobarclau; //Enmagatcemará funció de comparació
-            if(capçalera.is('.texte')){
-                      //Funció de comparació text
-                      trobarclau=function(celda){
-                          return cela.text().toUpperCase();
+                  tabla.find('tbody tr').hide().slice(paginaActual*filasporPagina,
+                  (paginaActual+1)*filasporPagina).show();
+                  estilosfilas(tabla); //Aplicamos los estilos
+                  $('thead td',tabla).each(function(columna){
+                  //Buscamos en las celdas de cabecera el tipo de ordenación
+                  var cabecera=$(this);
+                  var encontrarclave; //Almacenará función de comparación
+                  if(cabecera.is('.texto')){
+                      //Función de comparación texto
+                      encontrarclave=function(celda){
+                          return celda.text().toUpperCase();
                       };
-                  }else if(capçalera.is('.numero')){
-                      //Función de comparació de text
-                      trobarclau=function(cela){
-                          var clau=parseInt(cela.text());
-                          return isNaN(clau) ? 0: clau;
+                  }else if(cabecera.is('.numero')){
+                      //Función de comparación de texto
+                      encontrarclave=function(celda){
+                          var clave=parseInt(celda.text());
+                          return isNaN(clave) ? 0: clave;
                       };
-                  } //Fi de definició trobar clau
+                  } //Fin de definición encontrar clave
                   
-            //si hi ha clau d'ordenació
-             if(encontrarclave){
+                  //si hay clave de ordenación
+                  if(encontrarclave){
                       //Definimos estilos al pasar el cursor
                       cabecera.addClass('clickable').hover(function(){
                           cabecera.addClass('hover');
@@ -145,38 +140,12 @@ $(document).ready(function(){
                           estilosfilas(tabla); //Aplicamos los estilos de las filas
                       }); //Fin evento click
                   } //Fin encontrarclave
-            
-            
-            
-            if(capçalera.is('.capçalera')){ //retorna TRUE si la variable capçalera és de la classe .capçalera
-                //función para cuando situamos el cursor sobre la cabecera
-                capçalera.addClass('clickable').hover(function(){
-                   capçalera.addClass('hover'); 
-                },function(){
-                    capçalera.removeClass('hover');
-                });
-                //función para cuando se hace clic, aqui es donde se ordena
-                capçalera.click(function(){ //cuando hacemos click en la cabecera
-                    //obtenemos un array con todas las filas
-                    var files=taula.find('tbody > tr').get();
-                    //Función de ordenación
-                    files.sort(function(a,b){
-                        var clauA=$(a).children('td').eq(columna).text().toUpperCase();
-                        var clauB=$(b).children('td').eq(columna).text().toUpperCase();
-                        if(clauA < clauB) return -1;
-                        if(clauB > clauA) return 1;
-                        return 0;
-                    });
-                    $.each(files,function(index,fila){
-                        taula.children('tbody').append(fila);
-                    });//each
-                    taula.find('td').removeClass('endressar');
-                    taula.find('td').filter(':nth-child('+(columna+1)+')').addClass('endressar');
-                    estilsfileres(taula);
-                });//click
-            }//if
-        });//$(thead th,tabla)
-    }); //table
+              });//Fin each control columnas cabecera
+          });//Fin each tabla
+
+
+
+
 //******** MENÚ CONFIGURACIÓ ***********
 //CATEGORIA
     $('#categoria').click(function(){

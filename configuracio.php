@@ -13,7 +13,7 @@
     <body>
         <div class="caixa_formulari"> <!-- menú configuració, a capa lateral -->
             <!--
-            #TODO:
+           TODO:
                 - eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
             -->
 			<nav>

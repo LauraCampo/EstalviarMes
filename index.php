@@ -44,8 +44,7 @@
         </header>
         <div class="caixa_formulari"> <!-- menú principal-->
             <!--
-            #TODO:
-                - eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
+            TODO: eliminar l'aspecte d'enllaç ( violeta al marcar i subratllat)
                 - l'enllaç a configuració que sigui només una icona (a un costat)
             -->
 			<nav>
