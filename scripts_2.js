@@ -41,7 +41,7 @@ $(document).ready(function(){
     var estilosfilas=function(tabla){
                     $('tbody tr:even', tabla).removeClass('impar').addClass('par');
                     $('tbody tr:odd', tabla).removeClass('par').addClass('impar');
-                }
+                };
                $('table thead th').addClass('titulo');
                // $('table tbody tr:even').addClass('par');
                // $('table tbody tr:odd').addClass('impar');
