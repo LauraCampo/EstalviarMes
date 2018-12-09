@@ -4,8 +4,7 @@ Programa per a les finances personals.
 
 Tecnologies aplicades
 ---------------------
-html, css, javascript, php, MySQL
-Frameworks: jQuery, Bootstrap????
+html, css, javascript, php, MySQL,Frameworks: jQuery, Bootstrap????
 
 *******************************************************************************
 Finestra de notificacions
@@ -14,19 +13,24 @@ Finestra de notificacions
 - Data i hora
 - Notificacions
 - Saldo total
+- Configuració
 
 Menú principal
 --------------
-
-Afegir moviment 
-    - Data -> que per defecte aparegui la data d'avui
-                - que es pugui despolegar calendari
+- Afegir moviment 
+    - Data 
+        + que per defecte aparegui la data d'avui
+        + que es pugui desplegar calendari
     - Import 
-        - despesa -> negatiu
-        - ingrés  -> positiu
+        + despesa -> negatiu
+        + ingrés  -> positiu
     - Concepte (descripció)
-    - Tipus -> desplegable amb opcions BD tipus
-    - Via (targeta-nom de la targeta, efectiu, transferència)
-
+    - Tipus
+        + desplegable amb opcions BD tipus
+    - Via
+        + targeta-nom de la targeta, efectiu, transferència
+- Veure moviments totals
+    - veure 25 últims moviments
+    - infinite SCROLL
 
 
