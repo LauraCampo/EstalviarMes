@@ -25,7 +25,7 @@ $exec= mysqli_query($conexion, $sel);
                 <table>
                     <thead>
                     <tr>
-                        <td class="numero">Data</td>
+                        <td class="fecha">Data</td>
                         <td class="texto">Categoria</td>
                         <td class="texto">Proveïdor</td>
                         <td class="texto">Concepte</td>

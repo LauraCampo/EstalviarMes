@@ -45,7 +45,7 @@ $(document).ready(function(){
 var estilosfilas=function(tabla){
                     $('tbody tr:even',tabla).removeClass('impar').addClass('par');
                     $('tbody tr:odd',tabla).removeClass('par').addClass('impar');
-                }
+                };
                 $('table').each(function(){
                     var paginaActual=0;
                     var filasporPagina=5;
@@ -69,11 +69,9 @@ var estilosfilas=function(tabla){
                                 $(this).addClass('verpagina').siblings().removeClass('verpagina');
                         }).appendTo(capapagina).addClass('clickable');
                     }
-
                     //Insertamos los números de páginas antes de la tabla
                     capapagina.insertBefore(tabla);
                     repaginar();
-
                     estilosfilas(tabla); //Aplicamos los estilos
                     $('thead td',tabla).each(function(columna){
                         //Buscamos en las celdas de cabecera el tipo de ordenación
@@ -90,7 +88,17 @@ var estilosfilas=function(tabla){
                                 var clave=parseInt(celda.text());
 				return isNaN(clave) ? 0: clave;
                             };
-			}//Fin de definición función encontrar clave
+			}else{
+                            if(cabecera.is('.fecha')){
+                               encontrarclave=function(celda){
+                                var date = celda.text();
+                                var celda2 = date.split("-").reverse().join("-");
+                                //alert(celda2);
+                                var clave=parseInt(celda2);
+				return isNaN(clave) ? 0: clave;
+                               }; 
+                            }
+                        }
 			//Si hay clave de ordenación
                         if(encontrarclave){
                             //Definimos estilos al pasar cursor

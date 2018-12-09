@@ -45,7 +45,7 @@
                 <table>
                     <thead>
                     <tr>  
-                        <td class="texto">Data</td>
+                        <td class="fecha">Data</td>
                         <td class="texto">Categoria</td>
                         <td class="texto">Proveïdor</td>
                         <td class="texto">Concepte</td>
