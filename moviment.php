@@ -45,12 +45,12 @@
                 <table>
                     <thead>
                     <tr>  
-                        <td>Data</td>
-                        <td>Categoria</td>
-                        <td>Proveïdor</td>
-                        <td>Concepte</td>
-                        <td>Mètode</td>
-                        <td>Import</td>
+                        <td class="texto">Data</td>
+                        <td class="texto">Categoria</td>
+                        <td class="texto">Proveïdor</td>
+                        <td class="texto">Concepte</td>
+                        <td class="texto">Mètode</td>
+                        <td class="numero">Import</td>
                     </tr>
                 </thead>
                 <tbody>        

@@ -25,12 +25,12 @@ $exec= mysqli_query($conexion, $sel);
                 <table>
                     <thead>
                     <tr>
-                        <th>Data</th>
-                        <th>Categoria</th>
-                        <th>Proveïdor</th>
-                        <th>Concepte</th>
-                        <th>Mètode</th>
-                        <th>Import</th>
+                        <td class="numero">Data</td>
+                        <td class="texto">Categoria</td>
+                        <td class="texto">Proveïdor</td>
+                        <td class="texto">Concepte</td>
+                        <td class="texto">Mètode</td>
+                        <td class="numero">Import</td>
                     </tr>
                 </thead>
                 <tbody>  

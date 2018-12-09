@@ -75,3 +75,45 @@ th, td, tr{
 .titulo{
     background-color: #8b8b8b;
 }
+/******************************/
+.impar {
+	background-color: #FFC;
+}
+.par {
+	background-color: #CFC;
+}
+.numero {
+	background-color: #FF0;
+	color:#000;
+}
+.texto {
+	background-color: #FF0;
+	color:#000;
+}
+.tituloasc {
+	background-color: #FF0;
+}
+.titulodes {
+	background-color: #C9C;
+}
+.hover {
+	background-color: #0F0;
+	color:#000;
+	cursor: pointer;
+}
+.clickable {
+	color: #000;
+}
+.ordenar {
+	background-color:#3FF;
+	color: #F3C;
+}
+span{
+    border: #000 solid 1px;
+    padding: 2px;
+    margin: 2px;
+}
+.verpagina{
+	border:groove;
+	background-color:#6F9;
+}
