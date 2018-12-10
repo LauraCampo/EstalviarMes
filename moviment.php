@@ -14,6 +14,7 @@
 <?php
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     if(isset($_POST["Import"])){ //en cas de què s'hagi enviat el formulari
+        echo ("ENVIAT!!!!!");
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     $Data=$_POST["Any"].$_POST["Mes"].$_POST["Dia"];
           //aquí afegir dades a la taula Moviments

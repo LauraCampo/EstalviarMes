@@ -92,7 +92,9 @@ var estilosfilas=function(tabla){
                             if(cabecera.is('.fecha')){
                                encontrarclave=function(celda){
                                 var date = celda.text();
-                                var celda2 = date.split("-").reverse().join("-");
+                                //para dar la vuelta a la fecha con guiones:
+                                //var celda2 = date.split("-").reverse().join("-");
+                                var celda2 = date.split("-").reverse().join("");
                                 //alert(celda2);
                                 var clave=parseInt(celda2);
 				return isNaN(clave) ? 0: clave;
