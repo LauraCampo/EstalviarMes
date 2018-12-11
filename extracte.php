@@ -26,19 +26,19 @@ $exec= mysqli_query($conexion, $sel);
             <table id="taula_moviments">
                     <thead>
                     <tr>
-                        <td class="fecha">Data</td>
-                        <td class="texto">Categoria</td>
-                        <td class="texto">Proveïdor</td>
-                        <td class="texto">Concepte</td>
-                        <td class="texto">Mètode</td>
-                        <td class="numero">Import</td>
+                        <th class="fecha">Data</th>
+                        <th class="texto">Categoria</th>
+                        <th class="texto">Proveïdor</th>
+                        <th class="texto">Concepte</th>
+                        <th class="texto">Mètode</th>
+                        <th class="numero">Import</th>
                     </tr>
                 </thead>
                 <tbody>  
 <?php
 while($registre= mysqli_fetch_array($exec)){
 ?>
-                <tr>
+                <tr class="fileres">
                         <td><?php echo(date("d-m-Y", strtotime($registre[1])));?></td><!--Data-->
                         <td><?php echo($registre[3]);?></td><!--Categoria-->
                         <td><?php echo($registre[4]);?></td><!--Proveidor-->

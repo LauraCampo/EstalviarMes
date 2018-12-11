@@ -24,6 +24,8 @@ Hi ha dues funcions principals:<br>
             Es pot introduir tant una despesa com un ingrès,
             i després es mostren tots el moviments efectuats.
         - veure tots el moviments efectuats<br>
-            Es mostren tots el moviments efectuats,
-            endreçats amb el més nou a dalt.
+            Es mostren tots el moviments efectuats,<br>
+            endreçats amb el més nou a dalt per defecte.<br>
+        - es pot fer una cerca i filtrar desde la casella de cerca<br>
+        - es poden endressar els resultats clicant a la capçalera de qualsevol columna<br>
 

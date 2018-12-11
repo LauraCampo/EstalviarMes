@@ -41,7 +41,7 @@ $(document).ready(function(){
 //Buscar dins la taula:
   $("#cercador").on("keyup", function() {
     var value = $(this).val().toLowerCase();
-    $("table tr").filter(function() {
+    $(".fileres").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
     });
   });
@@ -79,7 +79,7 @@ var estilosfilas=function(tabla){
                     //capapagina.insertBefore(tabla);
                     //repaginar();
                     estilosfilas(tabla); //Aplicamos los estilos
-                    $('thead td',tabla).each(function(columna){
+                    $('thead th',tabla).each(function(columna){
                         //Buscamos en las celdas de cabecera el tipo de ordenación
 			var cabecera=$(this);
 			var encontrarclave; //Almecenará función de comparación
@@ -141,7 +141,7 @@ var estilosfilas=function(tabla){
 				});
 
                                 //Desactivar estilos de ordenación
-				tabla.find('thead td').removeClass('titulodes').removeClass('tituloasc');
+				tabla.find('thead th').removeClass('titulodes').removeClass('tituloasc');
 				//Aplicar estilo según dirección ordenación
 				if (direccion==1)
                                     cabecera.addClass('tituloasc');
