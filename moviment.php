@@ -109,7 +109,6 @@ while($registre= mysqli_fetch_array($exec)){
                             <input  id="ingres" type="radio" name="ing_des" value="0.01" checked>Ingrès
                             <input id="despesa" type="radio" name="ing_des" value="-0.01">Despesa
                             <br>
-                            <!-- #TODO: si es despesa que aparegui el simbol menys al davant -->
                                 <label for="Categoria">Escollir categoria:</label>
                                 <select id="Categoria" name="Categoria">
                                     <option value="" selected="selected">- selecciona -</option>
@@ -121,9 +120,9 @@ while($registre= mysqli_fetch_array($exec)){
                                     while($registre= mysqli_fetch_array($exec)){
                                     echo("<option value='".$registre[0]."'>".$registre[0]."</option>");
                                     };
+                                    //#TODO: afegir icones al tipus de despesa
                                     ?>        
                                 </select><br>
-                            <!-- #TODO: afegir icones al tipus de despesa -->
                             <label for="Proveidor">Escollir proveïdor:</label>
                                 <select id="Proveidor" name="Proveidor">
                                     <option value="" selected="selected">- selecciona -</option>
