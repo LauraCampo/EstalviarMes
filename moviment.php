@@ -94,17 +94,20 @@ while($registre= mysqli_fetch_array($exec)){
                         Data:
                             <?php
                              $today = getdate();
+                             //#TODO:que es pugui desplegar el calendari
+                             if($today[mday]<10){
+                                 $dia="0"+$today[mday];
+                             }else{
+                                $dia=$today[mday];
+                             }
                             ?>
-                            <input type="text" size="2" name="Dia" value="<?php echo $today[mday] ?>">-
+                            <input type="text" size="2" name="Dia" value="<?php echo $dia ?>">-
                             <input type="text" size="2" name="Mes" value="<?php echo $today[mon] ?>">-
                             <input type="text" size="4" name="Any" value="<?php echo $today[year] ?>">
                             <br>
-                            <!--#TODO:
-                                - que es pugui desplegar el calendari
-                            -->
                             Import:<input id="import" type="number" step="0.01" size="6" name="Import" value="0">€
-                            <input  id="ingres" type="radio" name="ing_des" value="????" checked>Ingrès
-                            <input id="despesa" type="radio" name="ing_des" value="????">Despesa
+                            <input  id="ingres" type="radio" name="ing_des" value="0.01" checked>Ingrès
+                            <input id="despesa" type="radio" name="ing_des" value="-0.01">Despesa
                             <br>
                             <!-- #TODO: si es despesa que aparegui el simbol menys al davant -->
                                 <label for="Categoria">Escollir categoria:</label>
@@ -132,9 +135,9 @@ while($registre= mysqli_fetch_array($exec)){
                                     while($registre= mysqli_fetch_array($exec)){
                                     echo("<option value='".$registre[0]."'>".$registre[0]."</option>");
                                     };
+                                    //#TODO: relacionar la llista de proveïdors amb el tipus de despesa
                                     ?>        
                                 </select><br>
-                            <!-- #TODO: relacionar la llista de proveïdors amb el tipus de despesa -->
                             Concepte:<input type="text" size="30" name="Concepte"><br>
                             <label for="Metode">Escollir mètode:</label>
                                 <select id="Metode" name="Metode">
