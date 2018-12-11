@@ -62,7 +62,7 @@ ul {
     
 }
 /*estils per a la vista de la taula: */
-th, td, tr{
+th, td, tr, #cercador{
     border-radius: 5px;
     padding:5px;
 }
@@ -120,4 +120,24 @@ span{
 .verpagina{
 	border:groove;
 	background-color:#6F9;
+}
+/* prova de la cerca a la taula */
+table {
+    /*font-family: arial, sans-serif;*/
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    /*background-color: #dddddd;*/
+}
+/* fi de la prova de la cerca a la taula */
+#cercador{
+    margin: 5px;
 }

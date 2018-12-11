@@ -1,28 +1,3 @@
-//********* FUNCIÓ PER LA CERCA A LA TAULA ************
-function cercarDinsTaula() {
-  // Declare variables 
-  //Tip: Remove toUpperCase() if you want to perform a case-sensitive search.
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("taula_moviments");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  //Tip: Change tr[i].getElementsByTagName('td')[0] to [1] if you want
-  //to search for "Categoria" (index 1) instead of "Data" (index 0).
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
 $(document).ready(function(){    
 //********MENÚ PRINCIPAL********
 //CLICAR A ICONA CONFIGURACIÓ
@@ -62,8 +37,14 @@ $(document).ready(function(){
     $('#moviments_totals').click(function(){
         $("#contingut1").load('extracte.php');
     });
-
 //******** VISTES DE LA TAULA DE MOVIMENTS *********** 
+//Buscar dins la taula:
+  $("#cercador").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    });
+  });
 //    $('table thead th').addClass('titulo');
 //    $('table tbody tr:even').addClass('par');
 //    $('table tbody tr:odd').addClass('impar');
@@ -72,31 +53,31 @@ var estilosfilas=function(tabla){
                     $('tbody tr:odd',tabla).removeClass('par').addClass('impar');
                 };
                 $('table').each(function(){
-                    var paginaActual=0;
-                    var filasporPagina=5;
+                    //var paginaActual=0;
+                    //var filasporPagina=5;
                     var tabla=$(this);
-                    //Definimos función de repaginado
-                    var repaginar = function(){
-                        tabla.find('tbody tr').hide().slice(paginaActual*filasporPagina,
-                            (paginaActual+1)*filasporPagina).show();
-                    };
-                    //Obtenemos total de filas y calculamos cuantas páginas habrán
-                    var numeroFilas=tabla.find('tbody tr').length;
-                    var numeroPaginas=Math.ceil(numeroFilas/filasporPagina);
-                    //Preparamos los número de página para utilizar paginación
-                    var capapagina=$('<div class="pagina"></div>');
-                    for (var pagina=0;pagina<numeroPaginas;pagina++){
-                        $('<span class="numero-pagina"></span>')
-                            .text(pagina+1)
-                            .on('click',{nuevaPagina:pagina},function(event){
-                                paginaActual=event.data['nuevaPagina'];
-                                repaginar();
-                                $(this).addClass('verpagina').siblings().removeClass('verpagina');
-                        }).appendTo(capapagina).addClass('clickable');
-                    }
+                    //*********Definimos función de repaginado*******
+//                    var repaginar = function(){
+//                        tabla.find('tbody tr').hide().slice(paginaActual*filasporPagina,
+//                            (paginaActual+1)*filasporPagina).show();
+//                    };
+//                    //Obtenemos total de filas y calculamos cuantas páginas habrán
+//                    var numeroFilas=tabla.find('tbody tr').length;
+//                    var numeroPaginas=Math.ceil(numeroFilas/filasporPagina);
+//                    //Preparamos los número de página para utilizar paginación
+//                    var capapagina=$('<div class="pagina"></div>');
+//                    for (var pagina=0;pagina<numeroPaginas;pagina++){
+//                        $('<span class="numero-pagina"></span>')
+//                            .text(pagina+1)
+//                            .on('click',{nuevaPagina:pagina},function(event){
+//                                paginaActual=event.data['nuevaPagina'];
+//                                repaginar();
+//                                $(this).addClass('verpagina').siblings().removeClass('verpagina');
+//                        }).appendTo(capapagina).addClass('clickable');
+//                    }
                     //Insertamos los números de páginas antes de la tabla
-                    capapagina.insertBefore(tabla);
-                    repaginar();
+                    //capapagina.insertBefore(tabla);
+                    //repaginar();
                     estilosfilas(tabla); //Aplicamos los estilos
                     $('thead td',tabla).each(function(columna){
                         //Buscamos en las celdas de cabecera el tipo de ordenación
@@ -169,7 +150,7 @@ var estilosfilas=function(tabla){
                                 //Quitamos y luego aplicamos estilo de ordenación a la columna ordenada
                                 tabla.find('tbody td').removeClass('ordenar');
                                 tabla.find('tbody td').filter(':nth-child('+(columna+1)+')').addClass('ordenar');
-                                repaginar();
+                                //repaginar();
                                 estilosfilas(tabla); //Aplicamos los estilos de las filas
                             });//Fin evento click
 			}//Fin encontrarclave

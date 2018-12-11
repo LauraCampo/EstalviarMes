@@ -21,7 +21,7 @@ $exec= mysqli_query($conexion, $sel);
 //    exit();
 //}
 ?>
-    <input type="text" id="myInput" onkeyup="cercarDinsTaula()" placeholder="Search for names..">
+        <input id="cercador" type="text" placeholder="Cercar..">
         <div id="moviment_list_final">
             <table id="taula_moviments">
                     <thead>
