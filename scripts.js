@@ -1,3 +1,28 @@
+//********* FUNCIÓ PER LA CERCA A LA TAULA ************
+function cercarDinsTaula() {
+  // Declare variables 
+  //Tip: Remove toUpperCase() if you want to perform a case-sensitive search.
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("taula_moviments");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  //Tip: Change tr[i].getElementsByTagName('td')[0] to [1] if you want
+  //to search for "Categoria" (index 1) instead of "Data" (index 0).
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
 $(document).ready(function(){    
 //********MENÚ PRINCIPAL********
 //CLICAR A ICONA CONFIGURACIÓ
@@ -150,9 +175,6 @@ var estilosfilas=function(tabla){
 			}//Fin encontrarclave
                     });//Fin each control columnas cabecera
                 });//Fin each tabla
-
-
-
 //******** MENÚ CONFIGURACIÓ ***********
 //CATEGORIA
     $('#categoria').click(function(){
