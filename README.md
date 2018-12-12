@@ -4,7 +4,7 @@ Aplicatiu per controlar les finances personals.
 
 Amb aquest aplicatiu es poden controlar les despeses i els ingressos del nostre dia a dia.
 Les dades es guarden en una Base de Dades MySQL.<br>
-L'interface és totalment gràfica en un etorn web.
+L'interface és totalment gràfica en un entorn web.
 
  1.- Disseny de la base de dades:
 
