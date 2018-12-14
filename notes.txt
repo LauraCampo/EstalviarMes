@@ -1,4 +1,4 @@
-EstalviMés
+EstalviarMés
 ==========
 Programa per a les finances personals.
 
