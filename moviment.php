@@ -27,12 +27,12 @@
                 $insert.="'".$_POST["Concepte"]."'".",";
                 $insert.="'".$_POST["Metode"]."'";
                 $insert.=")";
-                //echo $insert;
+                echo $insert;
                 $exec= mysqli_query($conexion, $insert);
-//        if (!$check1_res) {
-//            printf("Error: %s\n", mysqli_error($conexion));
-//            exit();
-//        }
+        if (!$check1_res) {
+            printf("Error: %s\n", mysqli_error($conexion));
+            exit();
+        }
         $sel="SELECT * FROM Moviments ORDER BY Data DESC";//LIMIT 25
         //$sel="SELECT * FROM Moviments";
         $exec= mysqli_query($conexion, $sel);
@@ -87,7 +87,6 @@ while($registre= mysqli_fetch_array($exec)){
                                 $cont=$cont+1;
                             }
  ?>
-            <h3>Afegeix un nou moviment:</h3>
             <div id="moviment_list">
                     <form action="moviment.php" method="post" >
                         <!-- apareix número automàtic -->
@@ -95,15 +94,21 @@ while($registre= mysqli_fetch_array($exec)){
                         Data:
                             <?php
                              $today = getdate();
+                             //var_dump($today);
                              //#TODO:que es pugui desplegar el calendari
                              if($today[mday]<10){
-                                 $dia="0"+$today[mday];
+                                 $dia="0".$today[mday];
                              }else{
                                 $dia=$today[mday];
                              }
+                             if($today[mon]<10){
+                                 $mes="0".$today[mon];
+                             }else{
+                                $mes=$today[mon];
+                             }
                             ?>
                             <input type="text" size="2" name="Dia" value="<?php echo $dia ?>">-
-                            <input type="text" size="2" name="Mes" value="<?php echo $today[mon] ?>">-
+                            <input type="text" size="2" name="Mes" value="<?php echo $mes ?>">-
                             <input type="text" size="4" name="Any" value="<?php echo $today[year] ?>">
                             <br>
                             Import:<input id="import" type="number" step="0.01" size="6" name="Import" value="0">€
