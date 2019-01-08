@@ -11,7 +11,6 @@
         <script type="text/javascript" src="scripts.js"></script>
     </head>
     <body>
-        <h3>Llistat de moviments creats:</h3>  
 <?php
 $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
 $sel="SELECT * FROM Moviments ORDER BY Data DESC";
