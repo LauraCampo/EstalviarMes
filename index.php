@@ -21,9 +21,8 @@
             <div id="current_date">
                 <script>
                     var mesos = new Array ("de Gener","de Febrer","de Març","d'Abril","de Maig","de Juny","de Juliol","d'Agost","de Setembre","d'Octubre","de Novembre","de Desembre");
-                    var diesSetmana = new Array("Diumenge","Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte");
                     var f=new Date();
-                    document.write(diesSetmana[f.getDay()] + ", " + f.getDate() + " " + mesos[f.getMonth()] + " de " + f.getFullYear());
+                    document.write(f.getDate() + " " + mesos[f.getMonth()] + " de " + f.getFullYear());
                 </script>
                 <a href="#">
                     <img id="config_icon" src="images/config_logo.png" alt="logo">
@@ -38,7 +37,7 @@
                 $row = mysqli_fetch_assoc($exec); 
                 $saldo = $row['value_sum'];
                 ?>
-                <p>Saldo total:<?php echo($saldo) ?>€</p>
+                <p><?php echo($saldo) ?>€</p>
             </div>
         </div>
         </header>
