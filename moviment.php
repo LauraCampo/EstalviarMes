@@ -14,7 +14,7 @@
 <?php
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     if(isset($_POST["Import"])){ //en cas de què s'hagi enviat el formulari
-        echo ("ENVIAT!!!!!");
+        //echo ("ENVIAT!!!!!");
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     $Data=$_POST["Any"].$_POST["Mes"].$_POST["Dia"];
           //aquí afegir dades a la taula Moviments
@@ -27,12 +27,12 @@
                 $insert.="'".$_POST["Concepte"]."'".",";
                 $insert.="'".$_POST["Metode"]."'";
                 $insert.=")";
-                echo $insert;
+                //echo $insert;
                 $exec= mysqli_query($conexion, $insert);
-        if (!$check1_res) {
-            printf("Error: %s\n", mysqli_error($conexion));
-            exit();
-        }
+//        if (!$check1_res) {
+//            printf("Error: %s\n", mysqli_error($conexion));
+//            exit();
+//        }
         $sel="SELECT * FROM Moviments ORDER BY Data DESC";//LIMIT 25
         //$sel="SELECT * FROM Moviments";
         $exec= mysqli_query($conexion, $sel);
@@ -41,7 +41,6 @@
 //            exit();
 //        }
         ?>
-        <h3>Llistat de moviments creats:</h3>
         <input id="cercador" type="text" placeholder="Cercar..">
         <div id="moviment_list_final">
                 <table>
