@@ -30,7 +30,7 @@
     }
     else{ //(else -> en cas de què NO s'hagi enviat)
         a:
-        $sel="SELECT * FROM Proveidors";
+        $sel="SELECT * FROM Proveidors ORDER BY Referencia DESC";
         $exec= mysqli_query($conexion, $sel);
 //        if (!$check1_res) {
 //            printf("Error: %s\n", mysqli_error($conexion));
@@ -56,17 +56,7 @@ $sel="SELECT MAX(Referencia) AS Referencia FROM Proveidors";
                                 $cont = $registro[0];
                                 $cont=$cont+1;
                             }
-while($registre= mysqli_fetch_array($exec)){
-//    $cont = $registre[0];
-//    $cont=$cont+1;
 ?>
-                    <tr>
-                        <td><?php echo($registre[0]);?></td><!--Referencia-->
-                        <td><?php echo($registre[1]);?></td><!--Nom-->
-                        <td><!-- esborrar registre -->    
-                        </td>
-                    </tr>
-<?php } ?>
                     <tr>
                         <td><!-- apareix número automàtic -->
                             <input class="boton" type="text" size="2" name="Numero_proveidor" readonly value="<?php echo($cont);?>">
@@ -81,6 +71,18 @@ while($registre= mysqli_fetch_array($exec)){
                             <input type="submit" class="boto" value="Afegir" name="afegir">
                         </td>
                     </tr>
+<?php
+while($registre= mysqli_fetch_array($exec)){
+//    $cont = $registre[0];
+//    $cont=$cont+1;
+?>
+                    <tr>
+                        <td><?php echo($registre[0]);?></td><!--Referencia-->
+                        <td><?php echo($registre[1]);?></td><!--Nom-->
+                        <td><!-- esborrar registre -->    
+                        </td>
+                    </tr>
+<?php } ?>                 
             </tbody>
         </table>
     </form>

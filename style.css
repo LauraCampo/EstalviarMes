@@ -16,16 +16,11 @@ body {
     float: right;
     padding: 10px;
 }
-#notifications, .contingut {
+#notifications, .contingut, #moviment {
     border: 2px solid pink;
     border-radius: 15px;
     margin: 2px;
     background-color: white;
-    font-family: 'Mali', cursive;
-    font-size: 15px;
-}
-.caixa_formulari{
-    margin: 2px;
     font-family: 'Mali', cursive;
     font-size: 15px;
 }
@@ -67,31 +62,23 @@ th, td, tr, #cercador{
     padding:5px;
 }
 .impar{
-    background-color: #e4e3e2;
+    background-color: #F8E0F7;
 }
 .par{
-    background-color: #cacaca;
+    background-color: white;
 }
 .titulo{
-    background-color: #8b8b8b;
+    background-color: grey;
 }
 /******************************/
 .impar {
-	background-color: #FFC;
+	background-color: #F8E0F7;
 }
 .par {
-	background-color: #CFC;
+	background-color: white;
 }
-.numero {
-	background-color: #FF0;
-	color:#000;
-}
-.texto {
-	background-color: #FF0;
-	color:#000;
-}
-.fecha {
-	background-color: #FF0;
+.numero, .texto, .fecha {
+	background-color: pink;
 	color:#000;
 }
 .tituloasc {
@@ -101,7 +88,7 @@ th, td, tr, #cercador{
 	background-color: #C9C;
 }
 .hover {
-	background-color: #0F0;
+	background-color: red;
 	color:#000;
 	cursor: pointer;
 }

@@ -79,6 +79,8 @@ while($registre= mysqli_fetch_array($exec)){
 //            printf("Error: %s\n", mysqli_error($conexion));
 //            exit();
 //        }
+?>
+<?php
         $sel="SELECT MAX(Referencia) AS Referencia FROM Moviments";
                             $exec0= mysqli_query($conexion, $sel);
                             while($registro= mysqli_fetch_array($exec0)){
@@ -86,35 +88,66 @@ while($registre= mysqli_fetch_array($exec)){
                                 $cont=$cont+1;
                             }
  ?>
-            <div id="moviment_list">
+            
+<!-- aqui afegir la taula -->
+<!--<div id="contingut2" class="contingut">-->
+<?php
+$conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
+$sel="SELECT * FROM Moviments ORDER BY Data DESC";
+$exec= mysqli_query($conexion, $sel);
+//if (!$check1_res) {
+//    printf("Error: %s\n", mysqli_error($conexion));
+//    exit();
+//}
+?>      
+        <div id="moviment">
+            <a href="#">Afegir nou moviment</a>
+        </div><!--moviment.html-->
+        <input id="cercador" type="text" placeholder="Cercar..">
+        <div id="moviment_list_final">
+            <table id="taula_moviments">
+                    <thead>
+                    <tr>
+                        <th class="numero">Contador</th>
+                        <th class="fecha">Data</th>
+                        <th class="texto">Categoria</th>
+                        <th class="texto">Proveïdor</th>
+                        <th class="texto">Concepte</th>
+                        <th class="texto">Mètode</th>
+                        <th class="numero">Import</th>
+                    </tr>
+                </thead>
+                <tbody>
+<!-- aqui afegir el formulari -->
+<div id="moviment_list">
                     <form action="moviment.php" method="post" >
-                        <!-- apareix número automàtic -->
-                        <input type="text" size="10" name="Numero_moviment" readonly value="<?php echo($cont);?>"><br>      
-                        Data:
-                            <?php
-                             $today = getdate();
-                             //var_dump($today);
-                             //#TODO:que es pugui desplegar el calendari
-                             if($today[mday]<10){
-                                 $dia="0".$today[mday];
-                             }else{
-                                $dia=$today[mday];
-                             }
-                             if($today[mon]<10){
-                                 $mes="0".$today[mon];
-                             }else{
-                                $mes=$today[mon];
-                             }
-                            ?>
-                            <input type="text" size="2" name="Dia" value="<?php echo $dia ?>">-
-                            <input type="text" size="2" name="Mes" value="<?php echo $mes ?>">-
-                            <input type="text" size="4" name="Any" value="<?php echo $today[year] ?>">
-                            <br>
-                            Import:<input id="import" type="number" step="0.01" size="6" name="Import" value="0">€
-                            <input  id="ingres" type="radio" name="ing_des" value="0.01" checked>Ingrès
-                            <input id="despesa" type="radio" name="ing_des" value="-0.01">Despesa
-                            <br>
-                                <label for="Categoria">Escollir categoria:</label>
+                        <tr>
+                            <td>
+                                <!-- apareix número automàtic -->
+                                <input type="text" size="10" name="Numero_moviment" readonly value="<?php echo($cont);?>"><br>      
+                                    <?php
+                                     $today = getdate();
+                                     //var_dump($today);
+                                     //#TODO:que es pugui desplegar el calendari
+                                     if($today[mday]<10){
+                                         $dia="0".$today[mday];
+                                     }else{
+                                        $dia=$today[mday];
+                                     }
+                                     if($today[mon]<10){
+                                         $mes="0".$today[mon];
+                                     }else{
+                                        $mes=$today[mon];
+                                     }
+                                    ?>
+                            </td>                   
+                            <td>
+                               <input type="text" size="2" name="Dia" value="<?php echo $dia ?>">
+                               <input type="text" size="2" name="Mes" value="<?php echo $mes ?>">
+                               <input type="text" size="4" name="Any" value="<?php echo $today[year] ?>">
+                            </td>
+                            <td>
+                                <label for="Categoria"></label>
                                 <select id="Categoria" name="Categoria">
                                     <option value="" selected="selected">- selecciona -</option>
                                     <!-- aqui ha de fer un recorregut x la taula: -->
@@ -127,8 +160,10 @@ while($registre= mysqli_fetch_array($exec)){
                                     };
                                     //#TODO: afegir icones al tipus de despesa
                                     ?>        
-                                </select><br>
-                            <label for="Proveidor">Escollir proveïdor:</label>
+                                </select>
+                            </td>
+                            <td>
+                                <label for="Proveidor"></label>
                                 <select id="Proveidor" name="Proveidor">
                                     <option value="" selected="selected">- selecciona -</option>
                                     <!-- aqui ha de fer un recorregut  x la taula: -->
@@ -141,9 +176,21 @@ while($registre= mysqli_fetch_array($exec)){
                                     };
                                     //#TODO: relacionar la llista de proveïdors amb el tipus de despesa
                                     ?>        
-                                </select><br>
-                            Concepte:<input type="text" size="30" name="Concepte"><br>
-                            <label for="Metode">Escollir mètode:</label>
+                                </select>
+                            </td>
+                            <td>
+                               <input type="text" size="30" name="Concepte"> 
+                            </td>nume
+                            <td>
+                                <input id="import" type="number" step="0.01" size="6" name="Import" value="0">€
+                                <input  id="ingres" type="radio" name="ing_des" value="0.01" checked>Ingrès
+                                <input id="despesa" type="radio" name="ing_des" value="-0.01">Despesa
+                            </td>
+                            
+                            
+                            
+                            <td>
+                                <label for="Metode">Escollir mètode:</label>
                                 <select id="Metode" name="Metode">
                                     <option value="" selected="selected">- selecciona -</option>
                                     <!-- aqui ha de fer un recorregut  x la taula: -->
@@ -155,11 +202,41 @@ while($registre= mysqli_fetch_array($exec)){
                                     echo("<option value='".$registre[0]."'>".$registre[0]."</option>");
                                     };
                                     ?>        
-                                </select><br>
-                            <input type="reset" class="boto" value="Esborrar">
-                            <input type="submit" class="boto" value="Afegir" name="afegir">
+                                </select>
+                            </td>
+                            <td>
+                                <input type="reset" class="boto" value="Esborrar">
+                            </td>
+                            <td>
+                                <input type="submit" class="boto" value="Afegir" name="afegir">
+                            </td>
+                        </tr>
                     </form>
+</div>
+<?php
+$conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
+$sel="SELECT * FROM Moviments ORDER BY Data DESC";
+$exec= mysqli_query($conexion, $sel);
+//if (!$check1_res) {
+//    printf("Error: %s\n", mysqli_error($conexion));
+//    exit();
+//}   
+while($registre= mysqli_fetch_array($exec)){
+?>
+                <tr class="fileres">
+                        <td><?php echo($registre[0]);?></td><!--Referencia-->
+                        <td><?php echo(date("d-m-Y", strtotime($registre[1])));?></td><!--Data-->
+                        <td><?php echo($registre[3]);?></td><!--Categoria-->
+                        <td><?php echo($registre[4]);?></td><!--Proveidor-->
+                        <td><?php echo($registre[5]);?></td><!--Concepte-->
+                        <td><?php echo($registre[6]);?></td><!--Mètode-->
+                        <td class="columna_import"><?php echo($registre[2]);?>€</td><!--Import-->
+                    </tr>        
 <?php } ?>
-                </div>
+            </table>
+        </div>  
+<?php } ?>
+                
+    <!--</div>-->
     </body>
 </html>
