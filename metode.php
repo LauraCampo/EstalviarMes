@@ -57,7 +57,7 @@ $sel="SELECT MAX(Referencia) AS Referencia FROM Metodes";
                                 $cont=$cont+1;
                             }
 ?>
-    <tr>
+                    <tr>
                         <td><!-- apareix número automàtic -->
                             <input class="boton" type="text" size="2" name="Numero_metode" readonly value="<?php echo($cont);?>">
                         </td>
@@ -82,8 +82,7 @@ while($registre= mysqli_fetch_array($exec)){
                         <td><!-- esborrar registre -->    
                         </td>
                     </tr>
-<?php } ?>
-                    
+<?php } ?>               
             </tbody>
         </table>
     </form>
