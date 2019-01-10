@@ -40,21 +40,12 @@
                 <p><?php echo($saldo) ?>€</p>
             </div>
         </div>
-        </header>
-        <div class="caixa_formulari"> <!-- menú principal-->
-			<nav>
-			    <ul id="lista_menu">
-                                <li id="submenu1">
-                                    <div id="moviment"><a href="#">Afegir nou moviment</a></div><!--moviment.html-->
-                                </li>
-			    </ul>
-			</nav>
-        </div>
-        <div id="contingut1" class="contingut">
+        </header>    
+<!--        <div id="contingut1" class="contingut">
             <p>Per començar escull una opció del menú.</p>
-        </div>
+        </div>-->
         <div id="contingut2" class="contingut">
-                <?php
+<?php
 $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
 $sel="SELECT * FROM Moviments ORDER BY Data DESC";
 $exec= mysqli_query($conexion, $sel);
@@ -62,7 +53,10 @@ $exec= mysqli_query($conexion, $sel);
 //    printf("Error: %s\n", mysqli_error($conexion));
 //    exit();
 //}
-?>
+?>      
+        <div id="moviment">
+            <a href="#">Afegir nou moviment</a>
+        </div><!--moviment.html-->
         <input id="cercador" type="text" placeholder="Cercar..">
         <div id="moviment_list_final">
             <table id="taula_moviments">
@@ -88,8 +82,10 @@ while($registre= mysqli_fetch_array($exec)){
                         <td><?php echo($registre[6]);?></td><!--Mètode-->
                         <td class="columna_import"><?php echo($registre[2]);?>€</td><!--Import-->
                     </tr>
+                    
 <?php } ?>
+            </table>
+        </div>  
         </div>
-        
     </body>
 </html>

@@ -2,12 +2,12 @@ $(document).ready(function(){
 //********MENÚ PRINCIPAL********
 //CLICAR A ICONA CONFIGURACIÓ
     $('#config_icon').click(function(){
-        $("#contingut1").load('configuracio.php');
+        $("#contingut2").load('configuracio.php');
     });
 //******** AFEGIR MOVIMENT ***********
 //AFEGIR MOVIMENT:             
     $('#moviment').click(function(){
-        $("#contingut1").load('moviment.php');
+        $("#contingut2").load('moviment.php');
     });
     //escollir si es despesa o ingrès
     //si es despesa afegir "-" +  color vermell
