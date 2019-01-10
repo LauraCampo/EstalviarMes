@@ -10,8 +10,7 @@
         <script src="jQuery_3.3.1.js"></script>
         <script type="text/javascript" src="scripts.js"></script>
     </head>
-    <body>
-        <h3>Llistat de mètodes creats:</h3>   
+    <body>   
 <?php
     $conexion= mysqli_connect("127.0.0.1","root","localtestdeveloper","EstalviarMes");
     if(isset($_POST["Nom"])){ //en cas de què s'hagi enviat el formulari
@@ -30,7 +29,7 @@
     }
     else{ //(else -> en cas de què NO s'hagi enviat)
         a:
-        $sel="SELECT * FROM Metodes";
+        $sel="SELECT * FROM Metodes ORDER BY Referencia DESC";
         $exec= mysqli_query($conexion, $sel);
 //        if (!$check1_res) {
 //            printf("Error: %s\n", mysqli_error($conexion));
@@ -45,6 +44,7 @@
                         <th>Posició</th>
                         <th>Nom</th>
                         <th>Esborrar</th>
+                        <th>Afegir</th>
                     </tr>
                 </thead>
                 <tbody>        
@@ -56,18 +56,8 @@ $sel="SELECT MAX(Referencia) AS Referencia FROM Metodes";
                                 $cont = $registro[0];
                                 $cont=$cont+1;
                             }
-while($registre= mysqli_fetch_array($exec)){
-//   $cont = $registre[0];
-//   $cont=$cont+1;
 ?>
-                    <tr>
-                        <td><?php echo($registre[0]);?></td><!--Referencia-->
-                        <td><?php echo($registre[1]);?></td><!--Nom-->
-                        <td><!-- esborrar registre -->    
-                        </td>
-                    </tr>
-<?php } ?>
-                    <tr>
+    <tr>
                         <td><!-- apareix número automàtic -->
                             <input class="boton" type="text" size="2" name="Numero_metode" readonly value="<?php echo($cont);?>">
                         </td>
@@ -80,7 +70,20 @@ while($registre= mysqli_fetch_array($exec)){
                         <td><!-- Acceptar nou mètode -->
                             <input type="submit" class="boto" value="Afegir" name="afegir">
                         </td>
+                    </tr>                
+<?php
+while($registre= mysqli_fetch_array($exec)){
+//   $cont = $registre[0];
+//   $cont=$cont+1;
+?>
+                    <tr>
+                        <td><?php echo($registre[0]);?></td><!--Referencia-->
+                        <td><?php echo($registre[1]);?></td><!--Nom-->
+                        <td><!-- esborrar registre -->    
+                        </td>
                     </tr>
+<?php } ?>
+                    
             </tbody>
         </table>
     </form>
