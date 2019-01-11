@@ -61,12 +61,6 @@ th, td, tr, #cercador{
     border-radius: 5px;
     padding:5px;
 }
-.impar{
-    background-color: #F8E0F7;
-}
-.par{
-    background-color: white;
-}
 .titulo{
     background-color: grey;
 }
