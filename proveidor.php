@@ -44,7 +44,7 @@
                     <tr>
                         <th>Posició</th>
                         <th>Nom</th>
-                        <th>Esborrar</th>
+                        <th>Afegir</th>
                     </tr>
                 </thead>
                 <tbody>        
@@ -63,9 +63,6 @@ $sel="SELECT MAX(Referencia) AS Referencia FROM Proveidors";
                         </td>
                         <td><!-- s'introdueix nou mètode -->
                             Nom:<input type="text" size="20" name="Nom">
-                        </td>
-                        <td><!-- Esborrar formulari -->
-                            <input type="reset" class="boto" value="Esborrar">
                         </td>
                         <td><!-- Acceptar nou mètode -->
                             <input type="submit" class="boto" value="Afegir" name="afegir">
