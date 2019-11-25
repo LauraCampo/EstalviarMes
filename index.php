@@ -56,7 +56,7 @@ $exec= mysqli_query($conexion, $sel);
 ?>      
         <div id="moviment">
             <a href="#">Afegir nou moviment</a>
-        </div><!--moviment.html-->
+        </div><!--moviment.php-->
         <input id="cercador" type="text" placeholder="Cercar..">
         <div id="moviment_list_final">
             <table id="taula_moviments">
